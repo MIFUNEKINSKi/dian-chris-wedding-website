@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiona & Grayson - Wedding Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Allura&family=Alex+Brush&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <!-- Names Banner -->
+    <div class="names-banner">
+        <span class="banner-names">DIAN WULANDARI and CHRISTOPHER MOORE</span>
+        <button class="menu-toggle" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+
+    <!-- Hero/Cover Section -->
+    <section class="hero-cover">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1 class="couple-names">
+                <span class="name-line">DIAN WULANDARI</span>
+                <span class="and-line"><i>and</i></span>
+                <span class="name-line">CHRISTOPHER MOORE</span>
+            </h1>
+        </div>
+    </section>
+
+    <!-- Celebrate With Us Section -->
+    <section class="info-section celebrate-section">
+        <div class="info-content">
+            <h2>celebrate with us</h2>
+            <div class="date-info">
+                <h3>FRIDAY, MARCH 2, 2024</h3>
+                <h4>6 in the evening<br>
+                tavern<br>
+                hollister, california</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reception Section -->
+    <section class="info-section reception-section">
+        <div class="info-content">
+            <h2>reception to follow</h2>
+            <div class="date-info">
+                <h3>FEAST AND FESTIVITIES</h3>
+                <h4>6 in the evening<br>
+                transportation available until midnight<br>
+                dress for the outdoors</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rehearsal Dinner Section -->
+    <section class="rehearsal-section">
+        <div class="rehearsal-content">
+            <div class="rehearsal-text">
+                <h2>rehearsal dinner</h2>
+                <div class="date-info">
+                    <h3>THURSDAY, MARCH 1, 2024</h3>
+                    <h4>6 in the evening<br>
+                    tavern<br>
+                    hollister, california</h4>
+                </div>
+            </div>
+            <div class="rehearsal-image">
+                <!-- This will be styled with the pink background -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Section -->
+    <section class="image-section">
+        <img src="images/c1de70ea1a0ff24186ad85ee5111a9b9.jpeg" alt="Wedding Venue" class="venue-image">
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="story-section">
+        <div class="story-bg"></div>
+        <div class="story-content">
+            <h2>our story</h2>
+            <div class="story-text">
+                <p>Write your beautiful love story here. Share how you met, your journey together, and what makes your relationship special. This is your space to tell your unique story to your friends and family.</p>
+                <p>Add more paragraphs as needed to share the details of your romance, your proposal story, or any other special moments you'd like to highlight.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section class="gallery-section">
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="images/46ec276195d2a6e68bba9c5dc93e74be.jpeg" alt="Gallery Photo 1">
+            </div>
+            <div class="gallery-item">
+                <img src="images/5069ae6e1fab2c675f6b1a6cb78455e4.jpeg" alt="Gallery Photo 2">
+            </div>
+            <div class="gallery-item">
+                <img src="images/5ebc36336810d961d69f8772e50a820d.jpeg" alt="Gallery Photo 3">
+            </div>
+            <div class="gallery-item">
+                <img src="images/64be22b4f569ceaf77b6852b955ed3e3.jpeg" alt="Gallery Photo 4">
+            </div>
+            <div class="gallery-item">
+                <img src="images/66e7b2ec05f317d22f66bbb3c376898a.jpeg" alt="Gallery Photo 5">
+            </div>
+            <div class="gallery-item">
+                <img src="images/6793796f31fc716cc91db420fe35cb29.jpeg" alt="Gallery Photo 6">
+            </div>
+        </div>
+    </section>
+
+    <!-- Registry Section -->
+    <section class="registry-section">
+        <div class="registry-content">
+            <a href="#" class="registry-item" onclick="trackRegistryClick('Cash Registry'); return false;" data-registry="cash">
+                <div class="registry-script">Registry of Love</div>
+                <div class="registry-title">CASH REGISTRY</div>
+            </a>
+            <a href="https://www.westelm.com/" class="registry-item" onclick="trackRegistryClick('West Elm'); return true;" target="_blank" rel="noopener noreferrer">
+                <div class="registry-script">Gifts of Joy</div>
+                <div class="registry-title">WEST ELM</div>
+            </a>
+        </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section class="rsvp-section">
+        <div class="rsvp-content">
+            <h2>please join us</h2>
+            <p class="rsvp-deadline">Kindly respond by February 1, 2024</p>
+            
+            <form class="rsvp-form" id="rsvpForm" novalidate>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                        <span class="error-message" id="firstName-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                        <span class="error-message" id="lastName-error"></span>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                    <span class="error-message" id="email-error"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="attendance">Will you be attending? *</label>
+                    <select id="attendance" name="attendance" required>
+                        <option value="">Please select</option>
+                        <option value="yes">Yes, I'll be there!</option>
+                        <option value="no">Sorry, can't make it</option>
+                    </select>
+                    <span class="error-message" id="attendance-error"></span>
+                </div>
+                
+                <div class="form-group" id="guestsGroup">
+                    <label for="guests">Number of guests (including yourself)</label>
+                    <select id="guests" name="guests">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+                
+                <div class="form-group" id="dietaryGroup">
+                    <label for="dietary">Dietary restrictions or allergies</label>
+                    <textarea id="dietary" name="dietary" rows="3" placeholder="Please let us know about any dietary needs"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Special message (optional)</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Share a special message with us"></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">SEND RSVP</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

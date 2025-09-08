@@ -1,0 +1,3430 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://maps.googleapis.com">
+
+<head>
+<meta name="google" content="notranslate">
+<meta charset="UTF-8">
+<title>Fiona Wedding Website</title>
+<meta name="color-scheme" content="light" />
+<meta name="supported-color-schemes" content="light" />
+
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="email=no">
+<meta name="format-detection" content="address=no">
+
+<meta name="description" content="Welcome to cindy and carl's Wedding Website! View photos, directions, registry details and more at Bliss & Bone." />
+
+
+<meta property="og:image" content="https://myblissandbone.com/fiona/_thumbnails/page-1.jpeg?1742231263">
+<meta property="twitter:image" content="https://myblissandbone.com/fiona/_thumbnails/page-1.jpeg?1742231263">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="author" content="Bliss & Bone" />
+<meta name="copyright" content="&copy;Bliss & Bone" />
+
+<link rel="stylesheet" href="styles.css?1742231263" type="text/css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+	
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KS56VQM');</script>
+<!-- End Google Tag Manager -->
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript" src="/_scripts/TweenLite.min.js"></script>
+<script type="text/javascript" src="/_scripts/CSSPlugin.min.js"></script>
+<script type="text/javascript" src="/_scripts/autogrow-min.js"></script>
+<script type="text/javascript" src="/_scripts/countdown.jquery_bbww-min.js"></script>
+
+<script type="text/javascript">
+	var isWin = navigator.platform.indexOf('Win') >= 0;
+	var headerH;
+	var footerH;
+	var newSection;
+	var collage;
+	var isSingleNav;
+	var birdieConfig = {
+		clientId: "08310078-7ca9-4002-91ce-dce569719537",
+		themeKey: "blissbone",
+		occasion: "Wedding",
+	}
+	
+	// change to new page
+	var siteTitle = 'Fiona Wedding Website';
+	var custom = '';
+	var directory = '/fiona';
+	var siteURL = (location.hostname.search('myblissandbone.com') >= 0) ? directory : custom;
+	var page = 'home';
+	var newPage, $thisMenuItem;
+	var startPage = 'home';
+	var coverpage = false;
+	var changeHistory = false;
+	var initload = true;
+	
+	function headerHeight() {
+		headerH = $('header').height();
+		headerPT = Number($('header').css('padding-top').slice(0,-2));
+		headerPB = Number($('header').css('padding-bottom').slice(0,-2));
+		headerH = headerH + headerPB + headerPT;
+		return headerH;
+	}
+	
+	function footerHeight() {
+		if ($('footer').is('footer')) {
+			footerH = $('footer').height();
+			footerPT = Number($('footer').css('padding-top').slice(0,-2));
+			footerPB = Number($('footer').css('padding-bottom').slice(0,-2));
+			footerH = footerH + footerPB + footerPT;
+		} else {
+			footerH = 0;
+		}
+		return footerH;
+	}
+	
+	function selectPlaceholder() {
+		var $this = $(this);
+		var val = $this.val();
+		if (val == '') {
+			$this.addClass('hasPlaceholder');
+		} else {
+			$this.removeClass('hasPlaceholder');
+		}
+	}
+	
+	// add error for RSVP and Form
+	function addError(f,t) {
+		f.addClass('error').val(t).one('focus', function(){
+			$(this).removeClass('error').val('');
+		});
+	}
+	
+	// RSVP and Form validity control
+	let validityInit = true;
+	let resetValidityInit;
+	
+	function resetInvalidEvents(thisForm) {
+		thisForm.find('*[required]').off('invalid');
+		thisForm.find('*[required]').on('invalid', function(e) {
+			e.preventDefault();
+			//console.log($(this));
+			//$.each($(this), function(i,e) {
+				if (this.validity.typeMismatch) {
+					let fieldVal = this.value;
+					addError($(this), 'sorry "' + fieldVal + '" is not a valid email address');
+				} else {
+					addError($(this), '');
+				}
+			//});
+			if (validityInit) {
+				let destination = $(this).offset().top - (headerHeight() + 20);
+				TweenLite.to('html, body', 0.6, {scrollTop: destination, delay: 0.2, ease: Power3.easeOut});
+				validityInit = false;
+				clearTimeout(resetValidityInit);
+				resetValidityInit = setTimeout(() => {
+					validityInit = true;
+				}, 1000);
+			}
+		});
+	}
+	
+	// apply color fill, title and filter to loaded graphics
+	function initGraphicsColor(color,name,filter,e) {
+		var svg = e.contentDocument;
+		//console.log(color, filter, name, svg);
+		$(svg).find('#primary').attr({'fill': color, 'filter': filter, 'title': name});
+	}
+	
+	function sizePattern(e,objW,objH) {
+		var obj = e.contentDocument;
+		var viewbox = $(obj).find('svg').attr('viewBox');
+		var svgSize = viewbox.replace('0 0 ', '').split(' ');
+		var svgWRatio = objW / Number(svgSize[0]);
+		var svgHRatio = objH / Number(svgSize[1]);
+		var patternWScale = 1 / svgWRatio;
+		var patternHScale = 1 / svgHRatio;
+		//console.log('obj resize:', objW, objH, patternWScale, patternHScale);
+	$(obj).find('.foilPattern').attr({'width': 300 * patternWScale, 'height': 300 * patternHScale}).find('image').attr({'width': 300 * patternWScale, 'height': 300 * patternHScale});
+	}
+	
+	// set values
+	function calculateSpace() {
+		$winH = $(window).height();
+		headerH = headerHeight();
+		$('section').each(function(i,e) {
+			if ($(e).hasClass('coverpage')) {
+				if ($(e).hasClass('header')) {
+					$(e).css('margin-top', headerH + 'px');
+				}
+			} else {
+				$(e).css('margin-top', headerH + 'px');
+			}
+		});
+		if ($('.coverpage.header').is('section')) {
+			$('.coverpage.header .bgBox').each(function(i,e) {
+				$(this).height($winH - headerH);
+			});
+		}
+		if ($('h1.logo img, h1.logo object').length > 0) {
+			$('h1.logo img, h1.logo object').each(function(i,e) {
+				if ($(e).closest('.coverpage').hasClass('cover')) {
+					$(e).css('max-height', $(e).closest('.coverpage').height());
+				} else {
+					$(e).css('max-height', $(e).parent().height());
+				}
+			});
+		}
+		if ($('#MMlinkCont').length > 0) {
+			$('#MMlinkCont').css('height', headerH + 'px');
+			console.log('update mm');
+		}
+	}
+	
+	function setMinHeight(hh,fh) {
+		var pageHeight = 'min-height: calc(100vh - ' + (hh + fh) + 'px' + ');';
+		if ($('#secMinHeight').length > 0) $('#secMinHeight').remove();
+		if ($('main').hasClass('singlePage')) {
+			$('body').prepend('<style type="text/css" id="secMinHeight">main.singlePage {' + pageHeight + '}</style>');
+		} else {
+			$('body').prepend('<style type="text/css" id="secMinHeight">main section {' + pageHeight + '}</style>');
+		}
+	}
+			
+	function scrollToSection(t) {
+		let newSection = (t == '') ? 'home' : t.replace(/\S+#/, '');
+		headerH = headerHeight();
+		$('section.' + newSection).show();
+		sizeVideo();
+		if (collage) {
+			$('.gallery-collage').filter(':visible').each(function(i,e) {
+				let galleryAreaW = $(e).width();
+				positionImgs($(e),galleryAreaW);
+			})
+		}
+		let destination = $('section.' + newSection).offset().top - headerH;
+		TweenLite.to('html, body', 0.6, {scrollTop: destination, delay: 0.2, ease: Power3.easeOut});
+	}
+	
+	// change to new page
+	
+	function loadPage(t) {
+		newPage = (t == '') ? startPage : t.replace(/\S+#/, '');
+		$thisMenuItem = $('a[href="' + newPage + '"]').eq(0);
+		title = ($thisMenuItem) ? $thisMenuItem.text() : '';
+		$('#navContent .navItem').removeClass('select');
+		$thisMenuItem.addClass('select');
+		$('footer').fadeOut(400);
+		$('section' + '.' + page).fadeOut(400, function() {
+			$('header, footer').removeClass(page).removeClass('coverpage');
+			$('section.' + newPage).fadeIn('fast', function() {
+				if ($(this).hasClass('gallery-collage')) {
+					positionImgs($(this),$(this).width());
+				}
+				$('footer').fadeIn('fast', function() {
+					setMinHeight(headerHeight(), footerHeight());
+				});
+				$('section.' + newPage).css('margin-top', headerHeight());
+				sizeVideo();
+				calculateSpace();
+				TweenLite.to('html, body', 0.6, {scrollTop: 0, delay: 0.2, ease: Power3.easeOut});
+			});
+			coverpage = ($('section.' + newPage).hasClass('coverpage')) ? true : false;
+			if (coverpage) {
+				$('header, footer').addClass(newPage + ' coverpage');
+				if ($('section.' + newPage).hasClass('header')) {
+					$('header').removeClass('cover bottom').addClass('header');
+				} else if ($('section.' + newPage).hasClass('bottom')) {
+					$('header').removeClass('cover header').addClass('bottom');
+				} else {
+					$('header').removeClass('header bottom').addClass('cover');
+				}
+			} else {
+				$('header, footer').addClass(newPage);
+			}
+			
+			if (!changeHistory && newPage != 'home') {
+				window.history.pushState({set: newPage, title: siteTitle + ' | ' + title}, siteTitle + ' | ' + title, siteURL + '/#' + newPage);
+				$('title').text(siteTitle + ' | ' + title);
+			} else if (!changeHistory) {
+				window.history.pushState({set: newPage, title: siteTitle}, siteTitle, siteURL);
+				$('title').text(siteTitle);
+			}
+			changeHistory = false;
+			page = newPage;
+		});
+	}
+	
+	function loadPageSingle(t) {
+		newPage = (t == '') ? startPage : t.replace(/\S+#/, '');
+		$thisMenuItem = $('a[href="' + newPage + '"]').eq(0);
+		title = ($thisMenuItem) ? $thisMenuItem.text() : '';
+		$('#navContent .navItem').removeClass('select');
+		$thisMenuItem.addClass('select');
+		if (window.loaded) {
+			scrollToSection(newPage);
+		}
+		
+		if (!changeHistory && newPage != 'home') {
+			window.history.pushState({set: newPage, title: siteTitle + ' | ' + title}, siteTitle + ' | ' + title, siteURL + '/#' + newPage);
+			$('title').text(siteTitle + ' | ' + title);
+		} else if (!changeHistory) {
+			window.history.pushState({set: newPage, title: siteTitle}, siteTitle, siteURL);
+			$('title').text(siteTitle);
+		}
+		changeHistory = false;
+		page = newPage;
+	}
+	
+	// process internal internal navigation
+	function internalNav(i,e) {
+		$(e).click(function(evt) {
+			evt.preventDefault();
+			$thisMenuItem = $(this);
+			initload = false;
+			if (isSingleNav) {
+				loadPageSingle($thisMenuItem.attr('href'));
+			} else {
+				loadPage($thisMenuItem.attr('href'));
+				//scrollToSection($thisMenuItem.attr('href'));
+			}
+		});
+	}
+	
+	// iframe video sizing
+	function sizeVideo() {
+		$('.imgCont iframe').each(function(i,e) {
+			propWidth = Number($(e).prop('width'));
+			propHeight = Number($(e).prop('height'));
+			frameWidth = $(e).parent().width();
+			iframeRatio = propHeight / propWidth;
+			$(e).height(frameWidth * iframeRatio);
+		})
+	}
+	
+	function positionImgs(t,w) {
+		var imgHeights = [];
+		var multi = 0;
+		var maxH = 0;
+/*
+		if (w >= 1359) {
+			imgHeights = [0,0,0,0];
+		} else
+*/ if (w >= 1018) {
+			imgHeights = [0,0,0];
+		} else {
+			imgHeights = [0,0];
+		}
+		t.children('.section').each(function(i,e) {
+			imgH = $(this).height();
+			imgHeights[multi] += imgH;
+			multi++;
+			if ((i + 1) % imgHeights.length == 0) {
+				maxH = Math.max.apply(null,imgHeights);
+				//console.log(imgHeights);
+				for (var m = 1; m < imgHeights.length + 1; m++) {
+					if (i == imgHeights.length - 1) t.children('.section').eq(m - 1).css('margin-top', 0);
+					//console.log(i + m, 'max: ' + -maxH + ', imgH: ' + imgHeights[m - 1]);
+					t.children('.section').eq(i + m).css('margin-top', -maxH + imgHeights[m - 1]);
+				}
+				multi = 0;
+			}
+		})
+	}
+	
+	$(document).ready(function() {
+		collage = $('.gallery-collage').is('.gallery-collage');
+		isSingleNav = ($('#navContent').hasClass('singleNav') || $('#navContent').length < 1);
+		
+		if (isWin) { $('body').addClass('isWin') };
+		
+		$('textarea').autogrow({
+			context: $(this).closest('section'),
+			fixMinHeight: true,
+			onInitialize: true
+		});
+		
+		// navigation
+		var nav = false;
+		
+		function closeNav() {
+			var navItemsLen = $('#navContent nav a').length;
+			$('#navContent nav a').each(function(i,e) {
+				setTimeout(function() {$('#navContent nav a').eq(navItemsLen - i).removeClass('active')}, i * 100);
+			}).promise().done(function() {
+				$('#navContent').removeClass('active').fadeOut('fast', function() {
+					$('#mm').removeClass('closeNav');
+					nav = false;
+				});
+			});
+		}
+		
+		$('#mm').click(function() {
+			//scrollT = $(window).scrollTop();
+			if (nav) {
+				closeNav();
+			} else {
+				//$('nav').css('top', scrollT);
+				$('#navContent').fadeIn('fast', function() {
+					$(this).addClass('active');
+					$('#mm').addClass('closeNav');
+					if (!$(this).hasClass('split')) {
+						var topScroll = $(window).scrollTop();
+						($(window).height() >= $('body').height()) ? $(this).height($(window).height()) : $(this).height($('body').height() + headerHeight());
+						$('#navContent nav').css('top', topScroll + ($(window).height() * 0.09));
+					}
+					setTimeout(function() {
+						$('#navContent nav a').each(function(i,e) {
+							setTimeout(function() {$(e).addClass('active')}, i * 100);
+						});
+					}, 200);
+					nav = true;
+				});
+			}
+		});
+		
+		$('#navContent').click(function() {
+			closeNav();
+		});
+		
+		// processes click for navigation items
+		$('.navItem').each(internalNav);
+    
+    // back and forward buttons
+    window.onpopstate = function(e){
+			if(e.state){
+				newPage = e.state.set;
+				//$thisMenuItem = $('a[href="' + newPage + '"]');
+				changeHistory = true;
+				if (isSingleNav) {
+					loadPageSingle(newPage);
+				} else {
+					loadPage(newPage);
+				}
+				$('title').text(e.state.title);
+			} else {
+				if (!initload) {
+					//$thisMenuItem = $('a[href="' + startPage + '"]');
+					//console.log('no state, init = false');
+					if (isSingleNav) {
+						loadPageSingle(startPage);
+					} else {
+						loadPage(startPage);
+					}
+					changeHistory = true;
+				} else {
+					//console.log('no state, init = true');
+				}
+			}
+		}
+		
+		if (history.state) {
+			newPage = history.state.set;
+			//$thisMenuItem = $('a[href="' + newPage + '"]');
+			changeHistory = true;
+			if (isSingleNav) {
+				loadPageSingle(newPage);
+			} else {
+				loadPage(newPage);
+			}
+			//console.log('history');
+			$('title').text(history.state.title);
+		} else {
+			newPage = (location.hash) ? location.hash.slice(1) : startPage;
+			//$thisMenuItem = $('a[href="' + newPage + '"]');
+			changeHistory = false;
+			if (isSingleNav) {
+				loadPageSingle(newPage);
+			} else {
+				loadPage(newPage);
+			}
+			//(location.hash) ? console.log('hash') : console.log('load');
+		}
+    
+    if (location.hash) {
+	    newSection = location.hash.slice(1);
+		}
+		
+		
+		// gallery progressive image loading
+/*
+		function switchSRC(i) {
+			src = i.attr('url');
+			i.attr('url','');
+			i.attr('src', src);
+		};
+		
+		var add = 0;
+		
+		$(window).scroll(function(e) {
+      winPos = $(window).scrollTop() + $(window).height();
+			lastImg = $('.gallery img').eq(-1).offset().top;
+			if (winPos >= lastImg && add == 0) {
+				add = 1;
+				if ($('.galleryMore img').is('img')) {
+					for (var i = 0; i < 4; i++) {
+						switchSRC($('.galleryMore img').eq(0));
+						$moreImage = $('.galleryMore img').eq(0).detach();
+						$('.gallery').append($moreImage);
+						if (i == 3) add = 0;
+					}
+				}
+			}
+    });
+*/
+		
+		
+		$('.gallery-collage').filter(':visible').each(function(i,e) {
+			var $this = $(e);
+			$this.find('.section img').each(function(ind,ele) {
+				$(ele).on('load', function() {
+					positionImgs($this,$this.width());
+				})
+			});
+		});
+		
+		$('select').change(selectPlaceholder);
+		$('select').each(selectPlaceholder);
+		
+		// check header load so height can be calculated before window load
+		if ($('header img, header object').length > 0) {
+			$('header img, header object').one('load', function(e) {
+				calculateSpace();
+				footerH = footerHeight();
+				setMinHeight(headerH,footerH);
+			})
+		} else {
+			calculateSpace();
+			footerH = footerHeight();
+			setMinHeight(headerH,footerH);
+		}
+		
+		// nested section open close subsection
+		$('.section.nested .subsection h3').on('click', function(e) {
+			let $this = $(this);
+			if ($this.hasClass('open')) {
+				$this.removeClass('open').next('.nestedCont').slideUp(400);
+			} else {
+				$this.addClass('open').next('.nestedCont').slideDown(400);
+			}
+		})
+		
+		// load event for <object> to apply styling to SVG
+		$('h1 object, .iconImage object').each(function(i,e) {
+			//console.log(e);
+			e.onload = () => {
+				let name = this.dataset.name;
+				let filter = '';
+				var color;
+				if (this.dataset.color.length > 10) {
+					color = 'url(#' + name.toLowerCase().replace(/\s+/g, '') + ')';
+					sizePattern(this,$(this).width(),$(this).height());
+				} else {
+					color = '#' + this.dataset.color;
+				}
+				initGraphicsColor(color, name, filter, this);
+				//console.log('loaded', color, name, filter, e);
+			}
+		});
+		
+		
+		$(window).resize(function() {
+			$winH = $(this).height();
+			$mainH = $('main').height();
+			sizeVideo();
+			if (collage) {
+				$('.gallery-collage').filter(':visible').each(function(i,e) {
+					let galleryAreaW = $(e).width();
+					positionImgs($(e),galleryAreaW);
+				});
+				
+			}
+			calculateSpace();
+		});
+		
+		// time delay resize
+/*
+		setTimeout(function() {
+			$(window).resize();
+		}, 100);
+*/
+		
+	});
+	
+	$(window).on('load', function() {
+		$(this).resize();
+		// change to header logo on load, may need to weight for fonts to load
+		headerH = headerHeight();
+		footerH = footerHeight();
+		//var mmH = $('#mm').height();
+		
+		if (newSection) scrollToSection(newSection);
+		calculateSpace();
+		setMinHeight(headerH,footerH);
+		
+				// scroll mm menu color change
+		/* var sections = [];
+		
+		$('main > section').each(function(i,e) {
+			sections.push({el: $(e), topPos: $(e).offset().top, bottomPos: $(e).offset().top + $(e).height()});
+		}); */
+		
+		var homeCoverpage = $('main > section.home.coverpage');
+		if (homeCoverpage.length > 0) {
+			var coverHomeProps = {el: homeCoverpage, topPos: homeCoverpage.offset().top, bottomPos: homeCoverpage.offset().top + homeCoverpage.outerHeight() - (headerHeight() + 1)}
+			console.log(homeCoverpage.height(), headerHeight());
+			$(window).scroll(function(e) {
+				winPos = $(window).scrollTop();
+				if (winPos < coverHomeProps.bottomPos) {
+					$('header').addClass('coverpage').removeClass('popIn');
+				} else {
+					$('header').removeClass('coverpage').addClass('popIn');
+				}
+			});
+			$(window).scroll();
+		}
+				
+		$('h1 object, .iconImage object').each(function(i,e) {
+			//console.log(e);
+			let name = e.dataset.name;
+			let filter = '';
+			var color;
+			if (e.dataset.color.length > 10) {
+				color = 'url(#' + name.toLowerCase().replace(/\s+/g, '') + ')';
+				sizePattern(e,$(e).width(),$(e).height());
+			} else {
+				color = '#' + e.dataset.color;
+			}
+			initGraphicsColor(color, name, filter, e);
+			//console.log('loaded', color, name, filter, e);
+		});
+		
+		window.loaded = true;
+	});
+</script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KS56VQM"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	
+<script type="text/javascript">
+	var light_high_style = [];
+	var light_medium_style = [
+  {
+    "featureType": "administrative",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.land_parcel",
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "elementType": "labels.text",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "labels.icon",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road.arterial",
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road.local",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road.local",
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "transit",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  }
+];
+	var light_low_style = [
+  {
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.land_parcel",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.neighborhood",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "labels.icon",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road.arterial",
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road.local",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "transit",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  }
+];
+	var grey_high_style = [
+  {
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#f5f5f5"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.icon",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#616161"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      {
+        "color": "#f5f5f5"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.land_parcel",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#bdbdbd"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#eeeeee"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#757575"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#e5e5e5"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#9e9e9e"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#ffffff"
+      }
+    ]
+  },
+  {
+    "featureType": "road.arterial",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#757575"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#dadada"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#616161"
+      }
+    ]
+  },
+  {
+    "featureType": "road.local",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#9e9e9e"
+      }
+    ]
+  },
+  {
+    "featureType": "transit.line",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#e5e5e5"
+      }
+    ]
+  },
+  {
+    "featureType": "transit.station",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#eeeeee"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#c9c9c9"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#9e9e9e"
+      }
+    ]
+  }
+];
+	var grey_medium_style = [
+  {
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#f5f5f5"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.icon",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#616161"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      {
+        "color": "#f5f5f5"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.land_parcel",
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.land_parcel",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#bdbdbd"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#eeeeee"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "elementType": "labels.text",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#757575"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#e5e5e5"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#9e9e9e"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#ffffff"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "labels.icon",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road.arterial",
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road.arterial",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#757575"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#dadada"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#616161"
+      }
+    ]
+  },
+  {
+    "featureType": "road.local",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road.local",
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road.local",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#9e9e9e"
+      }
+    ]
+  },
+  {
+    "featureType": "transit",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "transit.line",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#e5e5e5"
+      }
+    ]
+  },
+  {
+    "featureType": "transit.station",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#eeeeee"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#c9c9c9"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#9e9e9e"
+      }
+    ]
+  }
+];
+	var grey_low_style = [
+  {
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#f5f5f5"
+      }
+    ]
+  },
+  {
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.icon",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#616161"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      {
+        "color": "#f5f5f5"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.land_parcel",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.land_parcel",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#bdbdbd"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.neighborhood",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#eeeeee"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#757575"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#e5e5e5"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#9e9e9e"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#ffffff"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "labels.icon",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road.arterial",
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road.arterial",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#757575"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#dadada"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#616161"
+      }
+    ]
+  },
+  {
+    "featureType": "road.local",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road.local",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#9e9e9e"
+      }
+    ]
+  },
+  {
+    "featureType": "transit",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "transit.line",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#e5e5e5"
+      }
+    ]
+  },
+  {
+    "featureType": "transit.station",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#eeeeee"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#c9c9c9"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#9e9e9e"
+      }
+    ]
+  }
+];
+	var dark_high_style = [
+  {
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#212121"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.icon",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#757575"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      {
+        "color": "#212121"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#757575"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.country",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#9e9e9e"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.land_parcel",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.locality",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#bdbdbd"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#757575"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#181818"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#616161"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      {
+        "color": "#1b1b1b"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "geometry.fill",
+    "stylers": [
+      {
+        "color": "#2c2c2c"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#8a8a8a"
+      }
+    ]
+  },
+  {
+    "featureType": "road.arterial",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#373737"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#3c3c3c"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway.controlled_access",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#4e4e4e"
+      }
+    ]
+  },
+  {
+    "featureType": "road.local",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#616161"
+      }
+    ]
+  },
+  {
+    "featureType": "transit",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#757575"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#3d3d3d"
+      }
+    ]
+  }
+];
+	var dark_medium_style = [
+  {
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#212121"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.icon",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#757575"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      {
+        "color": "#212121"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#757575"
+      },
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.country",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#9e9e9e"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.land_parcel",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.land_parcel",
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.locality",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#bdbdbd"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "elementType": "labels.text",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#757575"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#181818"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#616161"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      {
+        "color": "#1b1b1b"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "geometry.fill",
+    "stylers": [
+      {
+        "color": "#2c2c2c"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "labels.icon",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#8a8a8a"
+      }
+    ]
+  },
+  {
+    "featureType": "road.arterial",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#373737"
+      }
+    ]
+  },
+  {
+    "featureType": "road.arterial",
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#3c3c3c"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway.controlled_access",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#4e4e4e"
+      }
+    ]
+  },
+  {
+    "featureType": "road.local",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road.local",
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road.local",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#616161"
+      }
+    ]
+  },
+  {
+    "featureType": "transit",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "transit",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#757575"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#3d3d3d"
+      }
+    ]
+  }
+];
+	var dark_low_style = [
+  {
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#212121"
+      }
+    ]
+  },
+  {
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.icon",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#757575"
+      }
+    ]
+  },
+  {
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      {
+        "color": "#212121"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#757575"
+      },
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.country",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#9e9e9e"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.land_parcel",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.locality",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#bdbdbd"
+      }
+    ]
+  },
+  {
+    "featureType": "administrative.neighborhood",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "poi",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#757575"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#181818"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#616161"
+      }
+    ]
+  },
+  {
+    "featureType": "poi.park",
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      {
+        "color": "#1b1b1b"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "geometry.fill",
+    "stylers": [
+      {
+        "color": "#2c2c2c"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "labels.icon",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#8a8a8a"
+      }
+    ]
+  },
+  {
+    "featureType": "road.arterial",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#373737"
+      }
+    ]
+  },
+  {
+    "featureType": "road.arterial",
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#3c3c3c"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway",
+    "elementType": "labels",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road.highway.controlled_access",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#4e4e4e"
+      }
+    ]
+  },
+  {
+    "featureType": "road.local",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "road.local",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#616161"
+      }
+    ]
+  },
+  {
+    "featureType": "transit",
+    "stylers": [
+      {
+        "visibility": "off"
+      }
+    ]
+  },
+  {
+    "featureType": "transit",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#757575"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "geometry",
+    "stylers": [
+      {
+        "color": "#000000"
+      }
+    ]
+  },
+  {
+    "featureType": "water",
+    "elementType": "labels.text.fill",
+    "stylers": [
+      {
+        "color": "#3d3d3d"
+      }
+    ]
+  }
+];
+	function initMap() {
+  }
+</script>
+
+
+
+	
+				<div id="navContent" class="split singleNav" style="display: none;">
+				<div class="bgBox" style="filter: saturate(100%) hue-rotate(0deg) brightness(100%) opacity(100%) blur(0px) ; background-image: url(https://myblissandbone.com/fiona/_images/4d44081a07e466487ec2207517a9496e.jpeg); background-color: rgba(241,236,225,0.8); "></div>				<nav>
+					<div class="navScroll">					
+										
+																			<a href="home" class="navItem" rel="nofollow">home page</a>																																<a href="p277381" class="navItem" rel="nofollow">THE WEDDING</a>																																<a href="p277383" class="navItem" rel="nofollow">OTHER EVENTS</a>																																<a href="p277382" class="navItem" rel="nofollow">REGISTRY</a>																																<a href="p277386" class="navItem" rel="nofollow">GALLERY</a>																																<a href="p277387" class="navItem" rel="nofollow">QUESTIONS</a>																																<a href="p277384" class="navItem" rel="nofollow">REPLY NOW</a>																												
+					</div>				</nav>
+			</div>
+				
+	<header class="home singlePage cover">			<h1 class="monogram text">
+				<a href="home" class="navItem" rel="nofollow" style="color: #172517; ">
+									FIONA SHAY and GRAYSON MILLS								</a>
+			</h1>
+		</header>
+		
+	
+	<div id="MMlinkCont">
+											<div id="mm"></div>
+						</div>
+	
+	<main class="singlePage">
+	
+<!-- start of page_visible conditional -->
+		
+		
+			<!-- coverpage -->
+																																																																																																																																																																																																																																																																																																																
+											  						
+											
+						<section 
+							class="home halign-center valign-middle coverpage cover " 
+								
+																 style="background-color: #" data-color=""><div class="bgBox" style="filter: saturate(100%) hue-rotate(0deg) brightness(74%) opacity(100%) blur(0px) ; background-image: url(https://myblissandbone.com/fiona/_images/cbd1ee215ff80b6e71a6d4b52d8bb0c8.jpeg); background-position: center center"></div>								
+							<h1 id="coverpage_0" class="logo" style="
+								font-family: 'AbovetheBeyondSerif-Regular'; font-size: 45px; color: #DAC8A4; letter-spacing: 2px; ">
+								
+																									<span style=" filter: drop-shadow(rgba(0, 0, 0, 0.2) -1px -1px 0px) drop-shadow(rgba(255, 255, 255, 0) 1px 1px 0px);">FIONA SHAY<br />
+<br />
+<I>and</i><br />
+<br />
+GRAYSON MILLS</span>															</h1>
+														
+														
+						</section>
+																												
+				
+		
+		
+		
+		
+				
+		
+
+
+
+
+		
+
+
+
+<!-- end of page_visible conditional -->
+			<!-- start of page_visible conditional -->
+		
+				
+		
+				
+			<section class="content_page p277381" >
+				
+																																																																																																																																																																																																																																																																																																																																																																																																					
+							</div><!-- end .section -->								
+							<div class="section full addPadd">						 	
+													
+				 												
+													 			
+								<div class="sectionCont  small">
+							 	
+							 								 	
+																		<!-- **if an image, bgcolor, video or map is added for this section** -->
+																				<!-- *if image and text* -->
+											
+																						
+												 
+													<div class="imgCont " style="background-color: #DAC8A4">
+																																						
+																						
+																						
+																						<!-- with image all text on image -->
+												<div id="head_10" class="textCont">
+																																																							<h2 style="">celebrate with us</h2>
+																													
+															<div class="subsection"><h3 style="color: #"><span>SATURDAY, MARCH 3, 2024<br />
+</span></h3><h4 style="color: #">5 in the evening<br />
+eden rift vineyards<br />
+hollister, california</h4></div>																																								
+																									</div>
+																						
+																							</div>
+																						
+																						
+																								
+																				
+																		
+																	</div>
+								<!-- end sectionCont -->
+															
+																
+																					
+														
+											
+							</div><!-- end .section -->								
+							<div class="section split ">						 	
+													
+				 												
+													 			
+								<div class="sectionCont  medium addPadd">
+							 	
+							 								 	
+																		<!-- **if an image, bgcolor, video or map is added for this section** -->
+																				<!-- *if image and text* -->
+											
+																						
+												 
+													<div class="imgCont " style="background-color: #F1ECE1">
+																																						
+																						
+																						
+																						<!-- with image all text on image -->
+												<div id="head_11" class="textCont">
+																																																							<h2 style="">reception to follow</h2>
+																													
+															<div class="subsection"><h3 style="color: #"><span>FEAST AND FESTIVITES<br />
+</span></h3><h4 style="color: #">6 in the evening<br />
+transportation available until midnight<br />
+dress for the outdoors</h4></div>																																								
+																									</div>
+																						
+																							</div>
+																						
+																						
+																								
+																				
+																		
+																	</div>
+								<!-- end sectionCont -->
+															
+																
+																					
+														
+											
+															
+													 	
+													
+				 												
+													 			
+								<div class="sectionCont  medium addPadd">
+							 	
+							 								 	
+																		<!-- **if an image, bgcolor, video or map is added for this section** -->
+																				<!-- *if image and text* -->
+											
+																						
+																									<div class="imgCont  ">
+																								
+																						
+											<div class="bgBox" style="filter: saturate(100%) hue-rotate(0deg) brightness(100%) opacity(100%) blur(0px) ; background-image: url(https://myblissandbone.com/fiona/_images/9ff3a7d7931aad4cbf506fd8c3f37887.jpeg); background-position: center center"></div>											
+																						<!-- with image all text on image -->
+												<div id="head_12" class="textCont">
+																																																							
+																																																							
+																									</div>
+																						
+																							</div>
+																						
+																						
+																								
+																				
+																		
+																	</div>
+								<!-- end sectionCont -->
+															
+																
+																					
+							</div><!-- end .section -->							
+																																					
+			</section>
+		
+		
+		
+		
+		
+				
+		
+
+
+
+
+		
+
+
+
+<!-- end of page_visible conditional -->
+			<!-- start of page_visible conditional -->
+		
+				
+		
+				
+			<section class="content_page p277383" >
+				
+																																																																																																																																																																																																																																																																																																																																																																																																					
+							</div><!-- end .section -->								
+							<div class="section full ">						 	
+													
+				 												
+													 			
+								<div class="sectionCont  medium addPadd">
+							 	
+							 									 										 	<style type="text/css">
+										 	@media (max-width: 768px) {
+											 	.textCont#head_20 {font-size: 70% }										 	}
+										 	@media (max-width: 480px) {
+											 	.textCont#head_20 {font-size: 60% }										 	}
+									 	</style>
+								 								 								 	
+																		<!-- **if an image, bgcolor, video or map is added for this section** -->
+																				<!-- *if image and text* -->
+											
+																						
+																									<div class="imgCont  ">
+																								
+																						
+											<div class="bgBox" style="filter: saturate(100%) hue-rotate(0deg) brightness(100%) opacity(100%) blur(0px) ; background-image: url(https://myblissandbone.com/fiona/_images/f7061797a44fc15627bf03ac9ee3b5e1.jpeg); background-position: center center"></div>											
+																						<!-- with image all text on image -->
+												<div id="head_20" class="textCont">
+																																																							<h2 style="color: #F1ECE1; font-size: 7.1333333333333em">other events</h2>
+																													
+															<div class="subsection"></div>																																								
+																									</div>
+																						
+																							</div>
+																						
+																						
+																								
+																				
+																		
+																	</div>
+								<!-- end sectionCont -->
+															
+																
+																					
+														
+											
+							</div><!-- end .section -->								
+							<div class="section split ">						 	
+													
+				 												
+													 			
+								<div class="sectionCont  medium addPadd">
+							 	
+							 								 	
+																		<!-- **if an image, bgcolor, video or map is added for this section** -->
+																				<!-- *if image and text* -->
+											
+																						
+												 
+													<div class="imgCont " style="background-color: #F1ECE1">
+																																						
+																						
+																						
+																						<!-- with image all text on image -->
+												<div id="head_21" class="textCont">
+																																																							<h2 style="">rehearsal dinner</h2>
+																													
+															<div class="subsection"><h3 style="color: #"><span>FRIDAY, MARCH 2, 2024</span></h3><h4 style="color: #">6 in the evening<br />
+tavern<br />
+hollister, california</h4></div>																																								
+																									</div>
+																						
+																							</div>
+																						
+																						
+																								
+																				
+																		
+																	</div>
+								<!-- end sectionCont -->
+															
+																
+																					
+														
+											
+															
+													 	
+													
+				 												
+													 			
+								<div class="sectionCont  medium addPadd">
+							 	
+							 								 	
+																		<!-- **if an image, bgcolor, video or map is added for this section** -->
+																				<!-- *if image and text* -->
+											
+																						
+																									<div class="imgCont  ">
+																								
+																						
+											<div class="bgBox" style="filter: saturate(70%) hue-rotate(3.6deg) brightness(94%) opacity(100%) blur(0px) ; background-image: url(https://myblissandbone.com/fiona/_images/6cc64e52eb829a30c89823b505048448.jpeg); background-position: center center"></div>											
+																						<!-- with image all text on image -->
+												<div id="head_22" class="textCont">
+																																																							
+															<div class="subsection"></div>																																								
+																									</div>
+																						
+																							</div>
+																						
+																						
+																								
+																				
+																		
+																	</div>
+								<!-- end sectionCont -->
+															
+																
+																					
+							</div><!-- end .section -->							
+																																					
+			</section>
+		
+		
+		
+		
+		
+				
+		
+
+
+
+
+		
+
+
+
+<!-- end of page_visible conditional -->
+			<!-- start of page_visible conditional -->
+		
+				
+		
+				
+			<section class="content_page p277382" >
+				
+																																																																																																																																																																																																																																																																																																																																																																																																					
+							</div><!-- end .section -->								
+							<div class="section full ">						 	
+													
+				 												
+													 			
+								<div class="sectionCont square medium addPadd">
+							 	
+							 									 										 	<style type="text/css">
+										 	@media (max-width: 768px) {
+											 	.textCont#head_30 {font-size: 70% }										 	}
+										 	@media (max-width: 480px) {
+											 	.textCont#head_30 {font-size: 60% }										 	}
+									 	</style>
+								 								 								 	
+																		<!-- **if an image, bgcolor, video or map is added for this section** -->
+																				<!-- *if image and text* -->
+											
+																						
+												 
+													<div class="imgCont " style="background-color: #DAC8A4">
+																																						
+																						
+																						
+																						<!-- with image all text on image -->
+												<div id="head_30" class="textCont">
+																																																							<h2 style="font-size: 7.1333333333333em">thank you</h2>
+																													
+																																																							
+																									</div>
+																						
+																							</div>
+																						
+																						
+																								
+																				
+																		
+																	</div>
+								<!-- end sectionCont -->
+															
+																
+																					
+														
+											
+							</div><!-- end .section -->								
+							<div class="section split ">						 	
+													
+				 												
+													 			
+								<div class="sectionCont square small addPadd">
+							 	
+							 								 	
+																		<!-- **if an image, bgcolor, video or map is added for this section** -->
+																				<!-- *if image and text* -->
+											
+																						
+										  	 
+													<a href="https://blissandbone.sendbirdie.com/r/epic-honeymoon" class="imgCont " target="_blank"style="background-color: #172517">
+																																						
+																						
+																						
+																						<!-- with image all text on image -->
+												<div id="head_31" class="textCont">
+																																																							<h2 style="color: #DAC8A4; ">honeymoon and more</h2>
+																													
+															<div class="subsection"><h3 style="color: #DAC8A4"><span>CASH REGISTRY</span></h3></div>																																								
+																									</div>
+																						
+																							</a>
+																						
+																						
+																								
+																				
+																		
+																	</div>
+								<!-- end sectionCont -->
+															
+																
+																					
+														
+											
+															
+													 	
+													
+				 												
+													 			
+								<div class="sectionCont square small addPadd">
+							 	
+							 								 	
+																		<!-- **if an image, bgcolor, video or map is added for this section** -->
+																				<!-- *if image and text* -->
+											
+																						
+										  	 
+													<a href="http://www.westelm.com" class="imgCont " target="_blank"style="background-color: #172517">
+																																						
+																						
+																						
+																						<!-- with image all text on image -->
+												<div id="head_32" class="textCont">
+																																																							<h2 style="color: #DAC8A4; ">furniture and decor</h2>
+																													
+															<div class="subsection"><h3 style="color: #DAC8A4"><span>WEST ELM</span></h3></div>																																								
+																									</div>
+																						
+																							</a>
+																						
+																						
+																								
+																				
+																		
+																	</div>
+								<!-- end sectionCont -->
+															
+																
+																					
+							</div><!-- end .section -->							
+																																					
+			</section>
+		
+		
+		
+		
+		
+				
+		
+
+
+
+
+		
+
+
+
+<!-- end of page_visible conditional -->
+			<!-- start of page_visible conditional -->
+		
+				
+		
+		
+					
+			<section class="gallery-thumbnails p277386 square" style="">
+
+									
+						
+									
+						
+									
+						
+									
+						
+									
+						
+									
+						
+									
+						
+									
+						
+									
+						
+									
+						
+									
+						
+									
+						
+									
+						
+									
+						
+									
+						
+									
+						
+									
+						
+									
+						
+									
+						
+									
+						
+									
+						
+									
+						
+									
+						
+									
+						
+									
+						
+									
+						
+									
+						
+									
+						
+									
+						
+									
+						
+									
+						
+									
+						
+									
+						
+									
+						
+									
+						
+									
+						
+									
+						
+									
+						
+									
+						
+									
+						
+									
+						
+									
+													
+								<div class="section">
+																		<div class="imgCont">
+										<img src="https://myblissandbone.com/fiona/_images/9e4fd3d47b682ff6b5bec87e0b573bb9.jpeg" style="filter: saturate(100%) hue-rotate(0deg) brightness(100%) opacity(100%) blur(0px) ">									</div>
+																	</div>
+
+							
+								<div class="section">
+																		<div class="imgCont">
+										<img src="https://myblissandbone.com/fiona/_images/730869deb6c24d58596ad593822afa40.jpeg" style="filter: saturate(100%) hue-rotate(0deg) brightness(100%) opacity(100%) blur(0px) ">									</div>
+																	</div>
+
+							
+								<div class="section">
+																		<div class="imgCont">
+										<img src="https://myblissandbone.com/fiona/_images/5069ae6e1fab2c675f6b1a6cb78455e4.jpeg" style="filter: saturate(100%) hue-rotate(0deg) brightness(100%) opacity(100%) blur(0px) ">									</div>
+																	</div>
+
+							
+								<div class="section">
+																		<div class="imgCont">
+										<img src="https://myblissandbone.com/fiona/_images/33730e6ca256ec919d99f0b431df6b79.jpeg" style="filter: saturate(100%) hue-rotate(0deg) brightness(100%) opacity(100%) blur(0px) ">									</div>
+																	</div>
+
+							
+								<div class="section">
+																		<div class="imgCont">
+										<img src="https://myblissandbone.com/fiona/_images/ff834aa88ef57ffcf1fee819576cb98b.jpeg" style="filter: saturate(100%) hue-rotate(0deg) brightness(100%) opacity(100%) blur(0px) ">									</div>
+																	</div>
+
+							
+								<div class="section">
+																		<div class="imgCont">
+										<img src="https://myblissandbone.com/fiona/_images/46ec276195d2a6e68bba9c5dc93e74be.jpeg" style="filter: saturate(100%) hue-rotate(0deg) brightness(100%) opacity(100%) blur(0px) ">									</div>
+																	</div>
+
+							
+								<div class="section">
+																		<div class="imgCont">
+										<img src="https://myblissandbone.com/fiona/_images/66e7b2ec05f317d22f66bbb3c376898a.jpeg" style="filter: saturate(100%) hue-rotate(0deg) brightness(100%) opacity(100%) blur(0px) ">									</div>
+																	</div>
+
+							
+								<div class="section">
+																		<div class="imgCont">
+										<img src="https://myblissandbone.com/fiona/_images/6793796f31fc716cc91db420fe35cb29.jpeg" style="filter: saturate(100%) hue-rotate(0deg) brightness(100%) opacity(100%) blur(0px) ">									</div>
+																	</div>
+
+							
+								<div class="section">
+																		<div class="imgCont">
+										<img src="https://myblissandbone.com/fiona/_images/1a144112c37c5aacb5d33d814c8d06d9.jpeg" style="filter: saturate(100%) hue-rotate(0deg) brightness(100%) opacity(100%) blur(0px) ">									</div>
+																	</div>
+
+							
+								<div class="section">
+																		<div class="imgCont">
+										<img src="https://myblissandbone.com/fiona/_images/64be22b4f569ceaf77b6852b955ed3e3.jpeg" style="filter: saturate(100%) hue-rotate(0deg) brightness(100%) opacity(100%) blur(0px) ">									</div>
+																	</div>
+
+							
+								<div class="section">
+																		<div class="imgCont">
+										<img src="https://myblissandbone.com/fiona/_images/c1de70ea1a0ff24186ad85ee5111a9b9.jpeg" style="filter: saturate(100%) hue-rotate(0deg) brightness(100%) opacity(100%) blur(0px) ">									</div>
+																	</div>
+
+							
+								<div class="section">
+																		<div class="imgCont">
+										<img src="https://myblissandbone.com/fiona/_images/5ebc36336810d961d69f8772e50a820d.jpeg" style="filter: saturate(100%) hue-rotate(0deg) brightness(100%) opacity(100%) blur(0px) ">									</div>
+																	</div>
+
+													
+									
+						
+									
+						
+					
+					<h4 class="credit"></h4>
+					
+										
+			</section>
+		
+		
+		
+				
+		
+
+
+
+
+		
+
+
+
+<!-- end of page_visible conditional -->
+			<!-- start of page_visible conditional -->
+		
+				
+		
+				
+			<section class="content_page p277387" >
+				
+																																																																																																																																																																																																																																																																																																																																																																																																					
+							</div><!-- end .section -->								
+							<div class="section full addPadd">						 	
+													
+				 												
+													 			
+								<div class="sectionCont  medium">
+							 	
+							 									 										 	<style type="text/css">
+										 	@media (max-width: 768px) {
+											 	.textCont#head_50 {font-size: 70% }										 	}
+										 	@media (max-width: 480px) {
+											 	.textCont#head_50 {font-size: 60% }										 	}
+									 	</style>
+								 								 								 	
+																		<!-- **if an image, bgcolor, video or map is added for this section** -->
+																				<!-- *if image and text* -->
+											
+																						
+																									<div class="imgCont  ">
+																								
+																						
+											<div class="bgBox" style="filter: saturate(100%) hue-rotate(0deg) brightness(100%) opacity(100%) blur(0px) ; background-image: url(https://myblissandbone.com/fiona/_images/e1fecaca06e5386e0273de66fc06da2b.jpeg); background-position: center center"></div>											
+																						<!-- with image all text on image -->
+												<div id="head_50" class="textCont">
+																																																							<h2 style="color: #F1ECE1; font-size: 8.1333333333333em">we've got answers</h2>
+																													
+															<div class="subsection"></div>																																								
+																									</div>
+																						
+																							</div>
+																						
+																						
+																								
+																				
+																		
+																	</div>
+								<!-- end sectionCont -->
+															
+																
+																					
+														
+											
+							</div><!-- end .section -->								
+							<div class="section large ">						 	
+													
+				 												
+													 			
+								<div class="sectionCont  small">
+							 	
+							 									 										 	<style type="text/css">
+										 	@media (max-width: 768px) {
+											 	.textCont#head_51 {font-size: 80% }										 	}
+										 	@media (max-width: 480px) {
+											 	.textCont#head_51 {font-size: 70% }										 	}
+									 	</style>
+								 								 								 	
+																		<!-- **if no image, bgcolor, video or map is added for this section** -->
+									
+										<div id="head_51" class="textCont textOnly">
+																																															
+													<div class="subsection"><h3><span>WILL THE CEREMONY BE OUTSIDE?</span></h3><h4>Yes! Please bring a light jacket just in case there is weather on the day.</h4></div>																																		
+																					</div>
+										
+																		
+																	</div>
+								<!-- end sectionCont -->
+															
+																
+																					
+														
+											
+															
+													 	
+													
+				 												
+													 			
+								<div class="sectionCont  small">
+							 	
+							 									 										 	<style type="text/css">
+										 	@media (max-width: 768px) {
+											 	.textCont#head_52 {font-size: 80% }										 	}
+										 	@media (max-width: 480px) {
+											 	.textCont#head_52 {font-size: 70% }										 	}
+									 	</style>
+								 								 								 	
+																		<!-- **if no image, bgcolor, video or map is added for this section** -->
+									
+										<div id="head_52" class="textCont textOnly">
+																																															
+													<div class="subsection"><h3><span>ARE CHILDREN ALLOWED AT THE CEREMONY?</span></h3><h4>We kindly ask that your children do not attend the ceremony but we can't wait to see them at the reception!</h4></div>																																		
+																					</div>
+										
+																		
+																	</div>
+								<!-- end sectionCont -->
+															
+																
+																					
+														
+											
+															
+													 	
+													
+				 												
+													 			
+								<div class="sectionCont  small">
+							 	
+							 									 										 	<style type="text/css">
+										 	@media (max-width: 768px) {
+											 	.textCont#head_53 {font-size: 80% }										 	}
+										 	@media (max-width: 480px) {
+											 	.textCont#head_53 {font-size: 70% }										 	}
+									 	</style>
+								 								 								 	
+																		<!-- **if no image, bgcolor, video or map is added for this section** -->
+									
+										<div id="head_53" class="textCont textOnly">
+																																															
+													<div class="subsection"><h3><span>CAN I TAKE PHOTOS DURING THE CEREMONY?</span></h3><h4>We kindly ask that there are no phones & cameras during our wedding ceremony.</h4></div>																																		
+																					</div>
+										
+																		
+																	</div>
+								<!-- end sectionCont -->
+															
+																
+																					
+														
+											
+															
+													 	
+													
+				 												
+													 			
+								<div class="sectionCont  small">
+							 	
+							 									 										 	<style type="text/css">
+										 	@media (max-width: 768px) {
+											 	.textCont#head_54 {font-size: 80% }										 	}
+										 	@media (max-width: 480px) {
+											 	.textCont#head_54 {font-size: 70% }										 	}
+									 	</style>
+								 								 								 	
+																		<!-- **if no image, bgcolor, video or map is added for this section** -->
+									
+										<div id="head_54" class="textCont textOnly">
+																																															
+													<div class="subsection"><h3><span>WILL THERE BE PARKING AVAILABLE?</span></h3><h4>There will be plenty of parking available as well as valet. Please plan to arrive early if you need to park.</h4></div>																																		
+																					</div>
+										
+																		
+																	</div>
+								<!-- end sectionCont -->
+															
+																
+																					
+														
+											
+															
+													 	
+													
+				 												
+													 			
+								<div class="sectionCont  small">
+							 	
+							 									 										 	<style type="text/css">
+										 	@media (max-width: 768px) {
+											 	.textCont#head_55 {font-size: 80% }										 	}
+										 	@media (max-width: 480px) {
+											 	.textCont#head_55 {font-size: 70% }										 	}
+									 	</style>
+								 								 								 	
+																		<!-- **if no image, bgcolor, video or map is added for this section** -->
+									
+										<div id="head_55" class="textCont textOnly">
+																																															
+													<div class="subsection"><h3><span>WILL THERE BE VEGETARIAN OPTIONS?</span></h3><h4>Yes! We will have a variety of options to meet everyones dietary needs. </h4></div>																																		
+																					</div>
+										
+																		
+																	</div>
+								<!-- end sectionCont -->
+															
+																
+																					
+							</div><!-- end .section -->							
+																																					
+			</section>
+		
+		
+		
+		
+		
+				
+		
+
+
+
+
+		
+
+
+
+<!-- end of page_visible conditional -->
+			<!-- start of page_visible conditional -->
+		
+				
+		
+				
+			<section class="content_page p277384" >
+				
+																																																																																																																																																																																																																																																																																																																																																																																																					
+							</div><!-- end .section -->								
+							<div class="section full addPadd">						 	
+													
+				 												
+													 			
+								<div class="sectionCont  small">
+							 	
+							 									 										 	<style type="text/css">
+										 	@media (max-width: 768px) {
+											 	.textCont#head_60 {font-size: 70% }										 	}
+										 	@media (max-width: 480px) {
+											 	.textCont#head_60 {font-size: 60% }										 	}
+									 	</style>
+								 								 								 	
+																		<!-- **if an image, bgcolor, video or map is added for this section** -->
+																				<!-- *if image and text* -->
+											
+																						
+										  														<a href="p277385" class="imgCont   navItem">
+																								
+																						
+											<div class="bgBox" style="filter: saturate(100%) hue-rotate(0deg) brightness(64%) opacity(100%) blur(0px) ; background-image: url(https://myblissandbone.com/fiona/_images/851d24409f032a6b93d2e94f0535ceda.jpeg); background-position: center center"></div>											
+																						<!-- with image all text on image -->
+												<div id="head_60" class="textCont">
+																																																							<h2 style="color: #DAC8A4; font-size: 7.1333333333333em">kindly reply</h2>
+																													
+															<div class="subsection"><h3 style="color: #DAC8A4"><span>CLICK TO RSVP</span></h3></div>																																								
+																									</div>
+																						
+																							</a>
+																						
+																						
+																								
+																				
+																		
+																	</div>
+								<!-- end sectionCont -->
+															
+																
+																					
+							</div><!-- end .section -->							
+																																					
+			</section>
+		
+		
+		
+		
+		
+				
+		
+
+
+
+
+		
+
+
+
+<!-- end of page_visible conditional -->
+			<!-- start of page_visible conditional -->
+		
+				
+		
+		
+		
+		
+				
+								<section class="rsvp topImage p277385" style="display: none">
+
+												
+				<div class="mediaCont square" style="background-color: #DAC8A4"><img src="https://myblissandbone.com/_images/placeholder_img_medium_32.png"></div>
+				<form id="rsvp2277385" class="rsvpImage" action="/_scripts/rsvp/" method="post">
+					<input type="hidden" name="sid" value="32516" />
+					<input type="hidden" name="pid" value="277385" />
+					<input type="hidden" name="rid" value="2" />
+					<input type="hidden" name="email" value="" />
+					<div style="display:none;"><input type="text" name="hpid" id="hpid" /></div>
+					
+					<div class="content">
+						<h2 style="font-size: 7.1333333333333em"></h2>
+						<h4 id="note277385" >kindly reply by april 1st</h4>
+						<div class="line"></div>
+					</div>
+					
+					<div class="content formFields">
+																																																																																																																																																																																																																																																																																																
+			
+						
+						
+																																																																																																																																																																																																																																																														
+																		<div class="group guest">
+													<input required class="large" type="text" name="guests[0][name]" placeholder="Enter Guest Name">
+																					<div class="event">
+																<h3>THE WEDDING</h3>
+																<div class="selectWrap">
+																	<select required name="guests[0][events][event1][response]" class="rsvpResponse">
+																		<option value="">Will you be joining us?</option>
+																		<option value="1">Yes</option>
+																		<option value="0">No</option>
+																	</select>
+																</div>
+			
+
+
+
+																																																						<div class="selectWrap">	
+																			<select name="guests[0][events][event1][meals]">
+																				<option value="">Select your entrée</option>
+																																																															<option value="Steak">Steak</option>
+																																																																																				<option value="Chicken">Chicken</option>
+																																																																																				<option value="Vegetarian">Vegetarian</option>
+																																																												</select>
+																		</div>
+																																				
+
+
+
+
+																				
+
+
+
+
+																				
+
+
+
+
+																				
+
+
+
+
+																				
+
+
+
+
+																				
+
+
+
+
+																							          
+																		<textarea name="guests[0][events][event1][diet_restrictions]" placeholder="List any dietary restrictions" class="notRequired"></textarea>		
+																																																		</div>
+						
+															</div>
+			
+																																			<a id="addGuest277385" class="addGuestBtn"><span class="icon add"></span><span class="text">Add Invited Guest</span><span class="icon sub"></span></a>
+									
+										<div class="line"></div>
+						
+																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																															
+									
+			
+						
+																										
+						
+																										
+						
+																													
+			
+									
+			
+						
+																										
+						
+																															<div class="group">
+												<h3>I CAN'T HELP BUT DANCE WHEN I HEAR...</h3>
+												<textarea name="customs[custom1][answer]" placeholder="Enter Song Name" ></textarea>
+											</div>
+																
+						
+																													
+			
+																																																									
+							<button class="button rsvp" type="submit" value="Submit" name="submit"><span>Reply Now</span></button>
+						</div>
+				</form>
+				
+				<script type="text/javascript">
+					function openForm277385() {
+						$('#rsvp2277385 .formFields').slideDown(400).next('.confirmBox').remove();
+						$('#rsvp2277385 button[type="submit"]').prop('disabled', false);
+					}
+					let confirmationButtonLink = '';
+										
+					var newGroup = $('#addGuest277385').prev('.group').clone();
+					var num = 0;
+					
+					function resetRSVP_reqEvent(i,e) {
+						$(e).change(function(e) {
+							var groupClass = ($(this).closest('.group').hasClass('guestbook')) ? '.group' : '.event';
+							var eventReqFields = $(this).closest(groupClass).find('input:not(.notRequired), select:not(.rsvpResponse):not(.notRequired), textarea:not(.notRequired)');
+							if (this.value == '1') {
+								eventReqFields.prop('required', true);
+								resetInvalidEvents($(this).closest('form'));
+							} else {
+								eventReqFields.prop('required', false);
+								resetInvalidEvents($(this).closest('form'));
+							}
+						});
+					}
+					$('.rsvpResponse').each(resetRSVP_reqEvent);
+					
+					$('#addGuest277385 .add').click(function() {
+						$this = $(this).parent();
+						num = num + 1;
+						var newGuest = newGroup.clone();
+						//newGuest.find('input:not(.radio)').val('');
+						newGuest.find('input, select, textarea').each(function() {
+							nameVal = $(this).attr('name');
+							nameNewVal = nameVal.replace('guests[0]', 'guests[' + num + ']');
+							$(this).attr('name', nameNewVal);
+						});
+						newGuest.find('input.radio').each(function() {
+							idVal = $(this).attr('id');
+							forVal = $(this).next('label').attr('for');
+							idNewVal = idVal.replace('yes0', 'yes' + num).replace('no0', 'no' + num);
+							forNewVal = forVal.replace('yes0', 'yes' + num).replace('no0', 'no' + num);
+							$(this).attr('id', idNewVal);
+							$(this).next('label').attr('for', forNewVal);
+						});
+						newGuest.find('select').on('change', selectPlaceholder);
+						newGuest.find('select').each(selectPlaceholder);
+						newGuest.find('.rsvpResponse').each(resetRSVP_reqEvent);
+						//console.log(newGuest);
+						$this.before(newGuest.hide());
+						$this.prev('.group').slideDown(400);
+						if (num > 0) {
+							$this.find('.sub').addClass('on');
+						} else {
+							$this.find('.sub').removeClass('on');
+						}
+						resetInvalidEvents($this.closest('form'));
+					});
+					
+					$('#addGuest277385 .sub').click(function() {
+						$this = $(this).parent();
+						num = num - 1;
+						$this.prev('.group').slideUp(400, function() {
+							$(this).remove();
+							if (num < 1) {
+								$this.find('.sub').removeClass('on');
+							}
+							resetInvalidEvents($this.closest('form'));
+						});
+					});
+					
+					// send me a copy functions
+					function submitCopyEmail(emailField, button, reciptHash) {
+						$('#' + emailField).off('keydown');
+						$('#' + emailField).on('keydown', function(e) {
+							e.preventDefault();
+						});
+						$('#' + button).off('click')
+						let form = $('#' + emailField).closest('form');
+						let url = form.attr('action');
+						let emailFieldName = $('#' + emailField).attr('name');
+						let reciptHashName = $('#' + reciptHash).attr('name');
+						let data = {};
+						data[emailFieldName] = $('#' + emailField).val();
+						data[reciptHashName] = $('#' + reciptHash).val();
+						let dataSerialized = $.param(data);
+						$.ajax({
+							url: url,
+							type: 'post',
+							dataType: 'json',
+							data: dataSerialized
+						}).fail(function(jqXHR, textStatus){
+							form.find('.confirmBox .error, .confirmBox .confirm').remove();
+							form.find('.confirmBox .formField').before('<p class="error">Sorry there was an error. ' + textStatus + '</p>');
+							sendCopyActions277385(emailField, button, reciptHash);
+						}).done(function(data) {
+							//console.log(data);
+							if (data.success) {
+								form.find('.confirmBox .error, .confirmBox .confirm').remove();
+								form.find('.confirmBox .formField').before('<p class="confirm">' + data.message + '</p>');
+								sendCopyActions277385(emailField, button, reciptHash);
+							} else {
+								form.find('.confirmBox .error, .confirmBox .confirm').remove();
+								form.find('.confirmBox .formField').before('<p class="error">Sorry there was an error. ' + data.error_message + '</p>');
+								sendCopyActions277385(emailField, button, reciptHash);
+							}
+						});
+					}
+					
+					function sendCopyActions277385(emailField, button, reciptHash) {
+						$('#' + emailField).off('keydown');
+						$('#' + emailField).on('keydown', function(e) {
+							if (e.key === 'Enter') {
+								e.preventDefault();
+								if (!this.validity.valid) {
+									this.reportValidity();
+								} else {
+									submitCopyEmail(emailField, button, reciptHash);
+								}
+							}
+						});
+						$('#' + button).on('click', function(e) {
+							if (!$('#' + emailField)[0].validity.valid) {
+								$('#' + emailField)[0].reportValidity();
+							} else {
+								submitCopyEmail(emailField, button, reciptHash);
+							}
+						});
+					}
+					
+					function confirmBox277385(fieldCont,xid) {
+													fieldCont.find('.formFields').slideUp(400).after('<div class="content confirmBox"><h3 style="text-align:center;">Thank you for your reply.</h3><div class="buttonCont">' + confirmationButtonLink + '</div><p><a rel="nofollow" onclick="openForm277385()"><i class="bi bi-arrow-repeat" style="font-size: 0.9em;"></i>&nbsp;<span>Change my RSVP</span></a></p><div class="formField"><label for="copyEmail277385"><i class="bi bi-envelope" style="font-size: 0.9em;"></i>&nbsp;&nbsp;<span>Send me a copy</span></label><input type="email" name="email_receipt" placeholder="Enter Your Email" id="copyEmail277385"><input type="hidden" name="recipient_hash" value="' + xid + '" id="reciptHash277385"><div class="sendCopyEmailButton" id="sendCopyEmailButton277385"><i class="bi bi-arrow-right"></i></div></div></div>');
+							$('.confirmBox .navItem').each(internalNav);
+							sendCopyActions277385('copyEmail277385', 'sendCopyEmailButton277385', 'reciptHash277385'); 
+												setTimeout(function() {
+							$(window).resize();
+						}, 600);
+					}
+			
+					$('#rsvp2277385').submit(function(e) {
+						e.preventDefault();
+						$this = $(this);
+						$this.find('button[type="submit"]').prop('disabled', true);
+						url = $this.attr('action');
+						$.ajax({
+							url: url,
+							type: 'post',
+							dataType: 'json',
+							data: $(this).serialize()
+						}).fail(function(jqXHR, textStatus){
+							$('#rsvp2277385 #note277385').addClass('error').html('Sorry there was an error. ' + textStatus);
+							$this.find('button[type="submit"]').prop('disabled', false);
+						}).done(function(data) {
+							//console.log(data);
+							if (data.success) {
+								let xidCode = data.recipient_hash;
+								confirmBox277385($this,xidCode);
+								destination = $this.offset().top - (headerHeight() + 20);
+								TweenLite.to('html, body', 0.4, {scrollTop: destination, delay: 0.4, ease: Power3.easeOut});
+							} else {
+								$('#rsvp2277385 #note277385').addClass('error').html('Sorry there was an error. ' + data.error_message);
+								$this.find('button[type="submit"]').prop('disabled', false);
+							}
+						});
+					});
+					resetInvalidEvents($('#rsvp2277385'));
+					
+									</script>
+				
+								
+			</section>
+		
+
+
+
+
+		
+
+
+
+<!-- end of page_visible conditional -->
+					<div class="spacer"></div>	</main>
+	
+	<footer class="home ">		
+			<h6><a href="https://blissandbone.com" target="_blank">site by Bliss & Bone</a></h6>
+		</footer>
+</body>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBwRhBaA21UpKbH011Pz18XR5WB-pnLMas&loading=async&callback=initMap"></script>
+
+
+
+</html>
