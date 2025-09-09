@@ -1,0 +1,2000 @@
+@charset "UTF-8";
+/* CSS Document */
+
+@font-face{
+	font-family:"Anton-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/Anton-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"InstrumentSerif-Italic";
+	src:url("/mybliss-9a5f3e/_fonts/InstrumentSerif-Italic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"InstrumentSerif-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/InstrumentSerif-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"BB_Ramillas_ExtraLight_Italic";
+	src:url("/mybliss-9a5f3e/_fonts/BB_Ramillas_ExtraLight_Italic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"BB_Ramillas_ExtraLight";
+	src:url("/mybliss-9a5f3e/_fonts/BB_Ramillas_ExtraLight.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Halant-Light";
+	src:url("/mybliss-9a5f3e/_fonts/Halant-Light.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"KronaOne-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/KronaOne-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Syne-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/Syne-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Mirra";
+	src:url("/mybliss-9a5f3e/_fonts/Mirra.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"LuxuriousScript-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/LuxuriousScript-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Aire-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/Aire-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Aire-RegularItalic";
+	src:url("/mybliss-9a5f3e/_fonts/Aire-RegularItalic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Krylon-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/Krylon-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"My Everything";
+	src:url("/mybliss-9a5f3e/_fonts/My Everything.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Switzerland";
+	src:url("/mybliss-9a5f3e/_fonts/Switzerland.woff") format("woff");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"AbovetheBeyondSerif-Italic";
+	src:url("/mybliss-9a5f3e/_fonts/AbovetheBeyondSerif-Italic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"BodoniSansDs-Light";
+	src:url("/mybliss-9a5f3e/_fonts/BodoniSansDs-Light.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"OrpheusPro-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/OrpheusPro-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"AllertaStencil-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/AllertaStencil-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Exmouth";
+	src:url("/mybliss-9a5f3e/_fonts/Exmouth.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"AbovetheBeyondSerif-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/AbovetheBeyondSerif-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"AbsoluteBeautyScript-Bold";
+	src:url("/mybliss-9a5f3e/_fonts/AbsoluteBeautyScript-Bold.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"AbsoluteBeautySerif-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/AbsoluteBeautySerif-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Balerno-Lt";
+	src:url("/mybliss-9a5f3e/_fonts/Balerno-Lt.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"QuicheSans-Light";
+	src:url("/mybliss-9a5f3e/_fonts/QuicheSans-Light.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"QuicheSans-LightItalic";
+	src:url("/mybliss-9a5f3e/_fonts/QuicheSans-LightItalic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}@font-face{
+	font-family:"Lanita";
+	src:url("/mybliss-9a5f3e/_fonts/Lanita.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"CatalinaAnacapa-SansRegular";
+	src:url("/mybliss-9a5f3e/_fonts/CatalinaAnacapa-SansRegular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Silverway";
+	src:url("/mybliss-9a5f3e/_fonts/Silverway.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"carista-calligraphy-regular";
+	src:url("/mybliss-9a5f3e/_fonts/carista-calligraphy-regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"cyan-neue";
+	src:url("/mybliss-9a5f3e/_fonts/cyan-neue.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"cyan-neue-italic";
+	src:url("/mybliss-9a5f3e/_fonts/cyan-neue-italic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"engraversgothic-bt";
+	src:url("/mybliss-9a5f3e/_fonts/engraversgothic-bt.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"kalinda-script-regular";
+	src:url("/mybliss-9a5f3e/_fonts/kalinda-script-regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+
+@font-face{
+	font-family:"Verahumana";
+	src:url("/mybliss-9a5f3e/_fonts/Verahumana.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Verahumana-italic";
+	src:url("/mybliss-9a5f3e/_fonts/Verahumana-italic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"WinslowScript-MediumRegular";
+	src:url("/mybliss-9a5f3e/_fonts/WinslowScript-MediumRegular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Certainly";
+	src:url("/mybliss-9a5f3e/_fonts/Certainly.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Abiyata";
+	src:url("/mybliss-9a5f3e/_fonts/Abiyata.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Hughes";
+	src:url("/mybliss-9a5f3e/_fonts/Hughes.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Sandy";
+	src:url("/mybliss-9a5f3e/_fonts/Sandy.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Ribreston";
+	src:url("/mybliss-9a5f3e/_fonts/Ribreston.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Amaly";
+	src:url("/mybliss-9a5f3e/_fonts/Amaly.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Casalsa";
+	src:url("/mybliss-9a5f3e/_fonts/Casalsa.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Gastone";
+	src:url("/mybliss-9a5f3e/_fonts/Gastone.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"PermanentMarker-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/PermanentMarker-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"BirthstoneBounce-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/BirthstoneBounce-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"HerrVonMuellerhoff-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/HerrVonMuellerhoff-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"MonsieurLaDoulaise-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/MonsieurLaDoulaise-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"MrsSaintDelafield-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/MrsSaintDelafield-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"PatrickHandSC-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/PatrickHandSC-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"ShadowsIntoLight-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/ShadowsIntoLight-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Ballet-Regular-VariableFont_opsz";
+	src:url("/mybliss-9a5f3e/_fonts/Ballet-Regular-VariableFont_opsz.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"PetitFormalScript-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/PetitFormalScript-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"PinyonScript-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/PinyonScript-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"AlegreyaSans-Light";
+	src:url("/mybliss-9a5f3e/_fonts/AlegreyaSans-Light.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"AlegreyaSans-LightItalic";
+	src:url("/mybliss-9a5f3e/_fonts/AlegreyaSans-LightItalic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"AlegreyaSans-Thin";
+	src:url("/mybliss-9a5f3e/_fonts/AlegreyaSans-Thin.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"AlegreyaSans-ThinItalic";
+	src:url("/mybliss-9a5f3e/_fonts/AlegreyaSans-ThinItalic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"AlegreyaSC-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/AlegreyaSC-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Archivo-Light";
+	src:url("/mybliss-9a5f3e/_fonts/Archivo-Light.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Archivo-Thin";
+	src:url("/mybliss-9a5f3e/_fonts/Archivo-Thin.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"ArchivoNarrow-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/ArchivoNarrow-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Chivo-Light";
+	src:url("/mybliss-9a5f3e/_fonts/Chivo-Light.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Chivo-LightItalic";
+	src:url("/mybliss-9a5f3e/_fonts/Chivo-LightItalic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"ChivoMono-ExtraLight";
+	src:url("/mybliss-9a5f3e/_fonts/ChivoMono-ExtraLight.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"DMSans-Light";
+	src:url("/mybliss-9a5f3e/_fonts/DMSans-Light.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"DMSans-Medium";
+	src:url("/mybliss-9a5f3e/_fonts/DMSans-Medium.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"FiraSansExtraCondensed-Light";
+	src:url("/mybliss-9a5f3e/_fonts/FiraSansExtraCondensed-Light.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"FiraSansExtraCondensed-LightItalic";
+	src:url("/mybliss-9a5f3e/_fonts/FiraSansExtraCondensed-LightItalic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"FiraSans-Light";
+	src:url("/mybliss-9a5f3e/_fonts/FiraSans-Light.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"FiraSans-LightItalic";
+	src:url("/mybliss-9a5f3e/_fonts/FiraSans-LightItalic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"IBMPlexSans-Light";
+	src:url("/mybliss-9a5f3e/_fonts/IBMPlexSans-Light.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"IBMPlexSans-LightItalic";
+	src:url("/mybliss-9a5f3e/_fonts/IBMPlexSans-LightItalic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Inter-Thin";
+	src:url("/mybliss-9a5f3e/_fonts/Inter-Thin.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Inter-Light";
+	src:url("/mybliss-9a5f3e/_fonts/Inter-Light.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Inter-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/Inter-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Inter-Medium";
+	src:url("/mybliss-9a5f3e/_fonts/Inter-Medium.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Inter-SemiBold";
+	src:url("/mybliss-9a5f3e/_fonts/Inter-SemiBold.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Inter-Bold";
+	src:url("/mybliss-9a5f3e/_fonts/Inter-Bold.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Karla-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/Karla-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Lato-Light";
+	src:url("/mybliss-9a5f3e/_fonts/Lato-Light.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Lato-LightItalic";
+	src:url("/mybliss-9a5f3e/_fonts/Lato-LightItalic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Lato-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/Lato-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Lato-Italic";
+	src:url("/mybliss-9a5f3e/_fonts/Lato-Italic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"LibreFranklin-Light";
+	src:url("/mybliss-9a5f3e/_fonts/LibreFranklin-Light.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Manrope-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/Manrope-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Montserrat-ExtraLight";
+	src:url("/mybliss-9a5f3e/_fonts/Montserrat-ExtraLight.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Montserrat-ExtraLightItalic";
+	src:url("/mybliss-9a5f3e/_fonts/Montserrat-ExtraLightItalic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Montserrat-Light";
+	src:url("/mybliss-9a5f3e/_fonts/Montserrat-Light.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Montserrat-LightItalic";
+	src:url("/mybliss-9a5f3e/_fonts/Montserrat-LightItalic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Montserrat-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/Montserrat-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Montserrat-Italic";
+	src:url("/mybliss-9a5f3e/_fonts/Montserrat-Italic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Montserrat-SemiBold";
+	src:url("/mybliss-9a5f3e/_fonts/Montserrat-SemiBold.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Montserrat-SemiBoldItalic";
+	src:url("/mybliss-9a5f3e/_fonts/Montserrat-SemiBoldItalic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"OpenSans-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/OpenSans-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"OpenSans-Italic";
+	src:url("/mybliss-9a5f3e/_fonts/OpenSans-Italic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Oswald-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/Oswald-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Poppins-Thin";
+	src:url("/mybliss-9a5f3e/_fonts/Poppins-Thin.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Poppins-ThinItalic";
+	src:url("/mybliss-9a5f3e/_fonts/Poppins-ThinItalic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Poppins-ExtraLight";
+	src:url("/mybliss-9a5f3e/_fonts/Poppins-ExtraLight.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Poppins-ExtraLightItalic";
+	src:url("/mybliss-9a5f3e/_fonts/Poppins-ExtraLightItalic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Poppins-Light";
+	src:url("/mybliss-9a5f3e/_fonts/Poppins-Light.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Poppins-LightItalic";
+	src:url("/mybliss-9a5f3e/_fonts/Poppins-LightItalic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Poppins-Light";
+	src:url("/mybliss-9a5f3e/_fonts/Poppins-Light.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Poppins-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/Poppins-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Poppins-Italic";
+	src:url("/mybliss-9a5f3e/_fonts/Poppins-Italic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Poppins-Medium";
+	src:url("/mybliss-9a5f3e/_fonts/Poppins-Medium.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Poppins-MediumItalic";
+	src:url("/mybliss-9a5f3e/_fonts/Poppins-MediumItalic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"ProzaLibre-Italic";
+	src:url("/mybliss-9a5f3e/_fonts/ProzaLibre-Italic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"ProzaLibre-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/ProzaLibre-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"PTSansNarrow-Bold";
+	src:url("/mybliss-9a5f3e/_fonts/PTSansNarrow-Bold.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"PTSansNarrow-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/PTSansNarrow-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Questrial-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/Questrial-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Raleway-Light";
+	src:url("/mybliss-9a5f3e/_fonts/Raleway-Light.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Raleway-LightItalic";
+	src:url("/mybliss-9a5f3e/_fonts/Raleway-LightItalic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Raleway-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/Raleway-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Raleway-Italic";
+	src:url("/mybliss-9a5f3e/_fonts/Raleway-Italic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Roboto-Light";
+	src:url("/mybliss-9a5f3e/_fonts/Roboto-Light.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Roboto-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/Roboto-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"TenorSans-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/TenorSans-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"AnticDidone-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/AnticDidone-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Arapey-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/Arapey-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Arapey-Italic";
+	src:url("/mybliss-9a5f3e/_fonts/Arapey-Italic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"BacasimeAntique-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/BacasimeAntique-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Cardo-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/Cardo-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Cardo-Italic";
+	src:url("/mybliss-9a5f3e/_fonts/Cardo-Italic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"CastoroTitling-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/CastoroTitling-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"CinzelDecorative-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/CinzelDecorative-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"CormorantGaramond-Light";
+	src:url("/mybliss-9a5f3e/_fonts/CormorantGaramond-Light.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"CormorantGaramond-LightItalic";
+	src:url("/mybliss-9a5f3e/_fonts/CormorantGaramond-LightItalic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"CormorantGaramond-Medium";
+	src:url("/mybliss-9a5f3e/_fonts/CormorantGaramond-Medium.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"CormorantGaramond-MediumItalic";
+	src:url("/mybliss-9a5f3e/_fonts/CormorantGaramond-MediumItalic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"CormorantGaramond-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/CormorantGaramond-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"CormorantGaramond-Italic";
+	src:url("/mybliss-9a5f3e/_fonts/CormorantGaramond-Italic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"CormorantGaramond-Bold";
+	src:url("/mybliss-9a5f3e/_fonts/CormorantGaramond-Bold.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"CormorantGaramond-BoldItalic";
+	src:url("/mybliss-9a5f3e/_fonts/CormorantGaramond-BoldItalic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"EBGaramond-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/EBGaramond-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"EBGaramond-Italic";
+	src:url("/mybliss-9a5f3e/_fonts/EBGaramond-Italic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Forum-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/Forum-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"GildaDisplay-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/GildaDisplay-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Kalnia-Light";
+	src:url("/mybliss-9a5f3e/_fonts/Kalnia-Light.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Kalnia-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/Kalnia-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"LibreBaskerville-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/LibreBaskerville-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"LibreBaskerville-Italic";
+	src:url("/mybliss-9a5f3e/_fonts/LibreBaskerville-Italic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"LibreCaslonDisplay-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/LibreCaslonDisplay-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Merriweather-Light";
+	src:url("/mybliss-9a5f3e/_fonts/Merriweather-Light.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Merriweather-LightItalic";
+	src:url("/mybliss-9a5f3e/_fonts/Merriweather-LightItalic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"NanumMyeongjo-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/NanumMyeongjo-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Neuton-ExtraLight";
+	src:url("/mybliss-9a5f3e/_fonts/Neuton-ExtraLight.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Neuton-Light";
+	src:url("/mybliss-9a5f3e/_fonts/Neuton-Light.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"NotoSerifDisplay-ExtraLight";
+	src:url("/mybliss-9a5f3e/_fonts/NotoSerifDisplay-ExtraLight.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"NotoSerifDisplay-ExtraLightItalic";
+	src:url("/mybliss-9a5f3e/_fonts/NotoSerifDisplay-ExtraLightItalic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"NotoSerifDisplay-Light";
+	src:url("/mybliss-9a5f3e/_fonts/NotoSerifDisplay-Light.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"NotoSerifDisplay-LightItalic";
+	src:url("/mybliss-9a5f3e/_fonts/NotoSerifDisplay-LightItalic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"NotoSerifDisplay-Thin";
+	src:url("/mybliss-9a5f3e/_fonts/NotoSerifDisplay-Thin.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"NotoSerifDisplay-ThinItalic";
+	src:url("/mybliss-9a5f3e/_fonts/NotoSerifDisplay-ThinItalic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"NotoSerifDisplay-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/NotoSerifDisplay-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"NotoSerifDisplay-Italic";
+	src:url("/mybliss-9a5f3e/_fonts/NotoSerifDisplay-Italic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Petrona-ExtraLight";
+	src:url("/mybliss-9a5f3e/_fonts/Petrona-ExtraLight.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Playfair_144pt-Light";
+	src:url("/mybliss-9a5f3e/_fonts/Playfair_144pt-Light.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Playfair_144pt-LightItalic";
+	src:url("/mybliss-9a5f3e/_fonts/Playfair_144pt-LightItalic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Prata-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/Prata-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"SourceSerif4-ExtraLight";
+	src:url("/mybliss-9a5f3e/_fonts/SourceSerif4-ExtraLight.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"SourceSerif4-ExtraLightItalic";
+	src:url("/mybliss-9a5f3e/_fonts/SourceSerif4-ExtraLightItalic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"SourceSerif4-Light";
+	src:url("/mybliss-9a5f3e/_fonts/SourceSerif4-Light.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"SourceSerif4-LightItalic";
+	src:url("/mybliss-9a5f3e/_fonts/SourceSerif4-LightItalic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"SourceSerif4-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/SourceSerif4-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"SourceSerif4-Italic";
+	src:url("/mybliss-9a5f3e/_fonts/SourceSerif4-Italic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Spectral-ExtraLight";
+	src:url("/mybliss-9a5f3e/_fonts/Spectral-ExtraLight.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Spectral-ExtraLightItalic";
+	src:url("/mybliss-9a5f3e/_fonts/Spectral-ExtraLightItalic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Spectral-Light";
+	src:url("/mybliss-9a5f3e/_fonts/Spectral-Light.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Spectral-LightItalic";
+	src:url("/mybliss-9a5f3e/_fonts/Spectral-LightItalic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Spectral-ExtraBold";
+	src:url("/mybliss-9a5f3e/_fonts/Spectral-ExtraBold.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"SpectralSC-Medium";
+	src:url("/mybliss-9a5f3e/_fonts/SpectralSC-Medium.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"CourierPrime-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/CourierPrime-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"CutiveMono-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/CutiveMono-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"RobotoMono-Light";
+	src:url("/mybliss-9a5f3e/_fonts/RobotoMono-Light.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"RobotoMono-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/RobotoMono-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"SpecialElite-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/SpecialElite-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Inconsolata-Light";
+	src:url("/mybliss-9a5f3e/_fonts/Inconsolata-Light.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+
+@font-face{
+	font-family:"AbrilFatface-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/AbrilFatface-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"BebasNeue-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/BebasNeue-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"BodoniModa_28pt-Italic";
+	src:url("/mybliss-9a5f3e/_fonts/BodoniModa_28pt-Italic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"BodoniModa_28pt-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/BodoniModa_28pt-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"BodoniModa_28pt-SemiBold";
+	src:url("/mybliss-9a5f3e/_fonts/BodoniModa_28pt-SemiBold.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"BodoniModa_28pt-Black";
+	src:url("/mybliss-9a5f3e/_fonts/BodoniModa_28pt-Black.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"CormorantSC-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/CormorantSC-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"LeagueSpartan-ExtraLight";
+	src:url("/mybliss-9a5f3e/_fonts/LeagueSpartan-ExtraLight.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"LeagueSpartan-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/LeagueSpartan-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"LeagueSpartan-Medium";
+	src:url("/mybliss-9a5f3e/_fonts/LeagueSpartan-Medium.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"LeagueSpartan-SemiBold";
+	src:url("/mybliss-9a5f3e/_fonts/LeagueSpartan-SemiBold.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Marcellus-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/Marcellus-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Mooli-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/Mooli-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"SofiaSansExtraCondensed-ExtraLight";
+	src:url("/mybliss-9a5f3e/_fonts/SofiaSansExtraCondensed-ExtraLight.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"SofiaSansExtraCondensed-Light";
+	src:url("/mybliss-9a5f3e/_fonts/SofiaSansExtraCondensed-Light.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"WorkSans-Italic";
+	src:url("/mybliss-9a5f3e/_fonts/WorkSans-Italic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"WorkSans-Light";
+	src:url("/mybliss-9a5f3e/_fonts/WorkSans-Light.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"WorkSans-LightItalic";
+	src:url("/mybliss-9a5f3e/_fonts/WorkSans-LightItalic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"WorkSans-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/WorkSans-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"WorkSans-SemiBold";
+	src:url("/mybliss-9a5f3e/_fonts/WorkSans-SemiBold.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+
+@font-face{
+	font-family:"Cherish-Today-Italic";
+	src:url("/mybliss-9a5f3e/_fonts/Cherish-Today-Italic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Adoraline";
+	src:url("/mybliss-9a5f3e/_fonts/Adoraline.woff") format("woff");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Aurellio";
+	src:url("/mybliss-9a5f3e/_fonts/Aurellio.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Bathey";
+	src:url("/mybliss-9a5f3e/_fonts/Bathey.woff") format("woff");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Beverly";
+	src:url("/mybliss-9a5f3e/_fonts/Beverly.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Blessed-Signature";
+	src:url("/mybliss-9a5f3e/_fonts/Blessed-Signature.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Charlotte";
+	src:url("/mybliss-9a5f3e/_fonts/Charlotte.woff") format("woff");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Cherish-Today";
+	src:url("/mybliss-9a5f3e/_fonts/Cherish-Today.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Clocks";
+	src:url("/mybliss-9a5f3e/_fonts/Clocks.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Clover";
+	src:url("/mybliss-9a5f3e/_fonts/Clover.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Cordon-Bleu";
+	src:url("/mybliss-9a5f3e/_fonts/Cordon-Bleu.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Dancing-In-The-Rain-Italic";
+	src:url("/mybliss-9a5f3e/_fonts/Dancing-In-The-Rain-Italic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Dancing-In-The-Rain";
+	src:url("/mybliss-9a5f3e/_fonts/Dancing-In-The-Rain.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Eastern-Forest";
+	src:url("/mybliss-9a5f3e/_fonts/Eastern-Forest.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Gisella";
+	src:url("/mybliss-9a5f3e/_fonts/Gisella.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Grand-Astoria";
+	src:url("/mybliss-9a5f3e/_fonts/Grand-Astoria.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Granola";
+	src:url("/mybliss-9a5f3e/_fonts/Granola.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Hailey";
+	src:url("/mybliss-9a5f3e/_fonts/Hailey.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Hamilton";
+	src:url("/mybliss-9a5f3e/_fonts/Hamilton.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Ivory";
+	src:url("/mybliss-9a5f3e/_fonts/Ivory.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"matcha";
+	src:url("/mybliss-9a5f3e/_fonts/matcha.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Miarlem";
+	src:url("/mybliss-9a5f3e/_fonts/Miarlem.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Monatta";
+	src:url("/mybliss-9a5f3e/_fonts/Monatta.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Morena";
+	src:url("/mybliss-9a5f3e/_fonts/Morena.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Munchie";
+	src:url("/mybliss-9a5f3e/_fonts/Munchie.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Paris-Angel";
+	src:url("/mybliss-9a5f3e/_fonts/Paris-Angel.woff") format("woff");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Perfect-Colony-Italic";
+	src:url("/mybliss-9a5f3e/_fonts/Perfect-Colony-Italic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Perfect-Colony";
+	src:url("/mybliss-9a5f3e/_fonts/Perfect-Colony.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Quick";
+	src:url("/mybliss-9a5f3e/_fonts/Quick.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Rotten";
+	src:url("/mybliss-9a5f3e/_fonts/Rotten.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Sabille";
+	src:url("/mybliss-9a5f3e/_fonts/Sabille.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Sacred-Valley";
+	src:url("/mybliss-9a5f3e/_fonts/Sacred-Valley.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Sanatha";
+	src:url("/mybliss-9a5f3e/_fonts/Sanatha.woff") format("woff");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Santana";
+	src:url("/mybliss-9a5f3e/_fonts/Santana.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Santino";
+	src:url("/mybliss-9a5f3e/_fonts/Santino.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Waldorf-Astoria";
+	src:url("/mybliss-9a5f3e/_fonts/Waldorf-Astoria.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+
+@font-face{
+	font-family:"Fraunces_72pt_Soft-ExtraLight";
+	src:url("/mybliss-9a5f3e/_fonts/Fraunces_72pt_Soft-ExtraLight.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Fraunces_72pt_Soft-ExtraLightItalic";
+	src:url("/mybliss-9a5f3e/_fonts/Fraunces_72pt_Soft-ExtraLightItalic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Fraunces_72pt_Soft-Light";
+	src:url("/mybliss-9a5f3e/_fonts/Fraunces_72pt_Soft-Light.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Fraunces_72pt_Soft-LightItalic";
+	src:url("/mybliss-9a5f3e/_fonts/Fraunces_72pt_Soft-LightItalic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Fraunces_72pt_Soft-Medium";
+	src:url("/mybliss-9a5f3e/_fonts/Fraunces_72pt_Soft-Medium.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Fraunces_72pt_Soft-MediumItalic";
+	src:url("/mybliss-9a5f3e/_fonts/Fraunces_72pt_Soft-MediumItalic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Quintessential-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/Quintessential-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+
+@font-face{
+	font-family:"Ablation-Black";
+	src:url("/mybliss-9a5f3e/_fonts/Ablation-Black.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Ablation-Bold";
+	src:url("/mybliss-9a5f3e/_fonts/Ablation-Bold.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Ablation-ExtraBold";
+	src:url("/mybliss-9a5f3e/_fonts/Ablation-ExtraBold.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Ablation-Hairline";
+	src:url("/mybliss-9a5f3e/_fonts/Ablation-Hairline.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Ablation-Light";
+	src:url("/mybliss-9a5f3e/_fonts/Ablation-Light.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Ablation";
+	src:url("/mybliss-9a5f3e/_fonts/Ablation.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Alora-Italic";
+	src:url("/mybliss-9a5f3e/_fonts/Alora-Italic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Alora-Style1";
+	src:url("/mybliss-9a5f3e/_fonts/Alora-Style1.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Alpas-Italic";
+	src:url("/mybliss-9a5f3e/_fonts/Alpas-Italic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Alpas";
+	src:url("/mybliss-9a5f3e/_fonts/Alpas.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Ambrose-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/Ambrose-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Bereft-Italic";
+	src:url("/mybliss-9a5f3e/_fonts/Bereft-Italic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Bereft";
+	src:url("/mybliss-9a5f3e/_fonts/Bereft.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Boketto-Bold";
+	src:url("/mybliss-9a5f3e/_fonts/Boketto-Bold.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Boketto-ExtraLight";
+	src:url("/mybliss-9a5f3e/_fonts/Boketto-ExtraLight.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Boketto-Italic";
+	src:url("/mybliss-9a5f3e/_fonts/Boketto-Italic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Boketto-ItalicBold";
+	src:url("/mybliss-9a5f3e/_fonts/Boketto-ItalicBold.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Boketto-ItalicExtraLight";
+	src:url("/mybliss-9a5f3e/_fonts/Boketto-ItalicExtraLight.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Boketto";
+	src:url("/mybliss-9a5f3e/_fonts/Boketto.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Caveat-Italic";
+	src:url("/mybliss-9a5f3e/_fonts/Caveat-Italic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Caveat";
+	src:url("/mybliss-9a5f3e/_fonts/Caveat.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Clarisone";
+	src:url("/mybliss-9a5f3e/_fonts/Clarisone.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Creamy-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/Creamy-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"DesertSong-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/DesertSong-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Edith-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/Edith-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Euphoria-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/Euphoria-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Ferly";
+	src:url("/mybliss-9a5f3e/_fonts/Ferly.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Footle";
+	src:url("/mybliss-9a5f3e/_fonts/Footle.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Galanthia-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/Galanthia-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"LaRocheScript-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/LaRocheScript-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"LaRocheSerif-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/LaRocheSerif-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"LeGrandCapital-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/LeGrandCapital-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"LeGrandItalic-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/LeGrandItalic-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"LeGrandLigatures-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/LeGrandLigatures-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"LeGrandRegular-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/LeGrandRegular-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"LeMajor-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/LeMajor-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"MacadamiaSmooth-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/MacadamiaSmooth-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"MacadamiaTextured-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/MacadamiaTextured-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"ModernSymphonyScript-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/ModernSymphonyScript-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"ModernSymphonySerif-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/ModernSymphonySerif-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"MoniqueLight-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/MoniqueLight-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"MoniqueLightItalic-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/MoniqueLightItalic-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"MsAugustine-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/MsAugustine-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"MsClaudy-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/MsClaudy-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Noceur-Italic";
+	src:url("/mybliss-9a5f3e/_fonts/Noceur-Italic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Noceur";
+	src:url("/mybliss-9a5f3e/_fonts/Noceur.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"OlivieSans-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/OlivieSans-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"OlivieScript-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/OlivieScript-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Ruminate-Italic";
+	src:url("/mybliss-9a5f3e/_fonts/Ruminate-Italic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Ruminate";
+	src:url("/mybliss-9a5f3e/_fonts/Ruminate.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"SaintAmour-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/SaintAmour-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"SaintViet-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/SaintViet-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Tweedle-Italic";
+	src:url("/mybliss-9a5f3e/_fonts/Tweedle-Italic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Tweedle";
+	src:url("/mybliss-9a5f3e/_fonts/Tweedle.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"WonderGarden-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/WonderGarden-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"WonderGardenSansRegular-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/WonderGardenSansRegular-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+
+@font-face{
+	font-family:"amoret-sans";
+	src:url("/mybliss-9a5f3e/_fonts/amoret-sans.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"amoret-script";
+	src:url("/mybliss-9a5f3e/_fonts/amoret-script.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"amoret-script-alt";
+	src:url("/mybliss-9a5f3e/_fonts/amoret-script-alt.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"BethEllen-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/BethEllen-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"bird-and-thorn";
+	src:url("/mybliss-9a5f3e/_fonts/bird-and-thorn.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"la-luxes-script";
+	src:url("/mybliss-9a5f3e/_fonts/la-luxes-script.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"la-luxes-serif";
+	src:url("/mybliss-9a5f3e/_fonts/la-luxes-serif.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"simple-serenity-script";
+	src:url("/mybliss-9a5f3e/_fonts/simple-serenity-script.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"simple-serenity-serif";
+	src:url("/mybliss-9a5f3e/_fonts/simple-serenity-serif.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Valuxe";
+	src:url("/mybliss-9a5f3e/_fonts/Valuxe.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"ador-light-italic";
+	src:url("/mybliss-9a5f3e/_fonts/ador-light-italic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"ador-light";
+	src:url("/mybliss-9a5f3e/_fonts/ador-light.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"camila-regular-italic";
+	src:url("/mybliss-9a5f3e/_fonts/camila-regular-italic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"camila";
+	src:url("/mybliss-9a5f3e/_fonts/camila.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"civane-normal-thin";
+	src:url("/mybliss-9a5f3e/_fonts/civane-normal-thin.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"coral-blush-script";
+	src:url("/mybliss-9a5f3e/_fonts/coral-blush-script.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"coral-blush-serif";
+	src:url("/mybliss-9a5f3e/_fonts/coral-blush-serif.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"freightbig-pro-light-italic";
+	src:url("/mybliss-9a5f3e/_fonts/freightbig-pro-light-italic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"freightbig-pro-light";
+	src:url("/mybliss-9a5f3e/_fonts/freightbig-pro-light.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"malik-light-italic";
+	src:url("/mybliss-9a5f3e/_fonts/malik-light-italic.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"malik-light";
+	src:url("/mybliss-9a5f3e/_fonts/malik-light.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"naive-sans-medium";
+	src:url("/mybliss-9a5f3e/_fonts/naive-sans-medium.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"recoleta-light";
+	src:url("/mybliss-9a5f3e/_fonts/recoleta-light.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"recoleta-medium";
+	src:url("/mybliss-9a5f3e/_fonts/recoleta-medium.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"wild-spirit";
+	src:url("/mybliss-9a5f3e/_fonts/wild-spirit.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"AbramoScript";
+	src:url("/mybliss-9a5f3e/_fonts/AbramoScript.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"AbramoSerif";
+	src:url("/mybliss-9a5f3e/_fonts/AbramoSerif.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Balzak";
+	src:url("/mybliss-9a5f3e/_fonts/Balzak.woff") format("woff");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Sophia";
+	src:url("/mybliss-9a5f3e/_fonts/Sophia.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"ImperialScript-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/ImperialScript-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"MeaCulpa-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/MeaCulpa-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}
+@font-face{
+	font-family:"Parisienne-Regular";
+	src:url("/mybliss-9a5f3e/_fonts/Parisienne-Regular.woff2") format("woff2");
+	font-display: swap;
+	text-rendering: optimizeLegibility;
+}

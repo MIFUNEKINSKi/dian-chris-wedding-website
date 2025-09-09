@@ -1,5 +1,27 @@
 // Fiona Wedding Website JavaScript
 
+// Scroll to RSVP form section
+function scrollToRSVP() {
+    const rsvpSection = document.getElementById('rsvp-form-section');
+    if (rsvpSection) {
+        // Show the RSVP form with elegant reveal
+        rsvpSection.style.display = 'block';
+        
+        // Trigger the animation after a brief moment to ensure display is set
+        setTimeout(() => {
+            rsvpSection.classList.add('show');
+        }, 50);
+        
+        // Scroll to it smoothly after the animation starts
+        setTimeout(() => {
+            rsvpSection.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }, 400);
+    }
+}
+
 // EmailJS Configuration
 // TO SET UP: 
 // 1. Go to https://www.emailjs.com/ and create a free account

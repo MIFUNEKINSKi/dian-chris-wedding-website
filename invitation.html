@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dian & Christopher - Wedding Invitation</title>
+    <meta name="description" content="You're invited to celebrate the wedding of Dian & Christopher">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background: #fafafa;
+            overflow-x: hidden;
+            color: #2c2c2c;
+        }
+
+        /* Full Screen Hero Invitation */
+        .invitation-hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.15), rgba(0,0,0,0.25)), 
+                        url('images/c1de70ea1a0ff24186ad85ee5111a9b9.jpeg') center/cover fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .invitation-content {
+            color: white;
+            max-width: 600px;
+            padding: 0 40px;
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .bride-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            font-weight: 300;
+            margin-bottom: 15px;
+            letter-spacing: 8px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .and-divider {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            margin: 25px 0;
+            opacity: 0.9;
+            letter-spacing: 2px;
+        }
+
+        .groom-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            font-weight: 300;
+            margin-bottom: 40px;
+            letter-spacing: 8px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .wedding-date {
+            font-family: 'Lato', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 400;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .wedding-time {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+        }
+
+        .wedding-venue {
+            font-family: 'Lato', sans-serif;
+            font-size: 1rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            line-height: 1.8;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+
+        .parents-invite {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 15px;
+            opacity: 0.85;
+            line-height: 1.6;
+        }
+
+        .guest-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-top: 25px;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255,255,255,0.3);
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            letter-spacing: 2px;
+        }
+
+        /* Content Sections */
+        .content-sections {
+            background: white;
+            min-height: 100vh;
+        }
+
+        /* Quick Details Bar */
+        .quick-details {
+            background: #8b7355;
+            color: white;
+            padding: 25px 0;
+            text-align: center;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .detail-item {
+            text-align: center;
+        }
+
+        .detail-label {
+            font-family: 'Lato', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            opacity: 0.8;
+        }
+
+        .detail-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        /* RSVP Section */
+        .rsvp-section {
+            padding: 80px 40px;
+            text-align: center;
+            background: #f8f8f8;
+        }
+
+        .rsvp-container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .rsvp-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            color: #8b7355;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+        }
+
+        .rsvp-subtitle {
+            font-family: 'Lato', sans-serif;
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 35px;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        .rsvp-button {
+            display: inline-block;
+            background: #8b7355;
+            color: white;
+            padding: 20px 50px;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            border: 2px solid #8b7355;
+        }
+
+        .rsvp-button:hover {
+            background: transparent;
+            color: #8b7355;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(139, 115, 85, 0.2);
+        }
+
+        /* Registry Section */
+        .registry-section {
+            padding: 60px 40px;
+            text-align: center;
+            background: white;
+        }
+
+        .registry-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: #8b7355;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        .registry-button {
+            display: inline-block;
+            background: transparent;
+            color: #8b7355;
+            padding: 15px 40px;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 2px solid #8b7355;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+
+        .registry-button:hover {
+            background: #8b7355;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Comments Section */
+        .comments-section {
+            padding: 80px 40px;
+            background: #f8f8f8;
+        }
+
+        .comments-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .comments-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: #8b7355;
+            text-align: center;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .comments-subtitle {
+            font-family: 'Lato', sans-serif;
+            font-size: 0.9rem;
+            color: #999;
+            text-align: center;
+            margin-bottom: 50px;
+            font-style: italic;
+        }
+
+        .comment-form {
+            background: white;
+            padding: 40px;
+            margin-bottom: 50px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-input, .form-textarea {
+            width: 100%;
+            padding: 15px 0;
+            border: none;
+            border-bottom: 2px solid #e0e0e0;
+            background: transparent;
+            font-family: 'Lato', sans-serif;
+            font-size: 1rem;
+            color: #2c2c2c;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-input:focus, .form-textarea:focus {
+            outline: none;
+            border-bottom-color: #8b7355;
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .submit-button {
+            background: #8b7355;
+            color: white;
+            border: 2px solid #8b7355;
+            padding: 15px 40px;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-button:hover {
+            background: transparent;
+            color: #8b7355;
+        }
+
+        .comments-list {
+            display: grid;
+            gap: 25px;
+        }
+
+        .comment {
+            background: white;
+            padding: 30px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+            border-left: 4px solid #8b7355;
+        }
+
+        .comment-author {
+            font-family: 'Lato', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #8b7355;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .comment-text {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.1rem;
+            color: #444;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .bride-name, .groom-name {
+                font-size: 2.5rem;
+                letter-spacing: 4px;
+            }
+            
+            .wedding-time {
+                font-size: 1.5rem;
+            }
+            
+            .details-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                padding: 0 20px;
+            }
+            
+            .invitation-content {
+                padding: 0 20px;
+            }
+            
+            .rsvp-section, .comments-section {
+                padding: 60px 20px;
+            }
+            
+            .comment-form {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Full Screen Invitation Hero -->
+    <section class="invitation-hero">
+        <div class="invitation-content">
+            <div class="bride-name">DIAN WULANDARI</div>
+            <div class="and-divider">and</div>
+            <div class="groom-name">CHRISTOPHER MOORE</div>
+            
+            <div class="wedding-date">FRIDAY, MARCH 2, 2024</div>
+            <div class="wedding-time">6 in the evening</div>
+            <div class="wedding-venue">
+                TAVERN<br>
+                HOLLISTER, CALIFORNIA
+            </div>
+            
+            <div class="parents-invite">
+                their parents<br>
+                invite you to join them<br>
+                at their wedding
+            </div>
+            
+            <div class="guest-name">
+                together with<br>
+                GUEST NAME/S WILL APPEAR HERE
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Sections -->
+    <div class="content-sections">
+        <!-- Quick Details Bar -->
+        <section class="quick-details">
+            <div class="details-grid">
+                <div class="detail-item">
+                    <div class="detail-label">When</div>
+                    <div class="detail-value">March 2, 2024</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Where</div>
+                    <div class="detail-value">Tavern, Hollister, California</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">Who</div>
+                    <div class="detail-value">Dian & Christopher</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RSVP Section -->
+        <section class="rsvp-section">
+            <div class="rsvp-container">
+                <h2 class="rsvp-title">RSVP Now</h2>
+                <p class="rsvp-subtitle">Please visit our wedding website to share your response and explore all the celebration details.</p>
+                <a href="index.html" class="rsvp-button">Visit Wedding Website</a>
+            </div>
+        </section>
+
+        <!-- Registry Section -->
+        <section class="registry-section">
+            <h2 class="registry-title">Registry</h2>
+            <a href="https://cash.app/$dianwulandari" class="registry-button" target="_blank">Give a Gift</a>
+        </section>
+
+        <!-- Comments Section -->
+        <section class="comments-section">
+            <div class="comments-container">
+                <h2 class="comments-title">Leave a Comment</h2>
+                <p class="comments-subtitle">Share your love and well wishes for the happy couple</p>
+                
+                <div class="comment-form">
+                    <div class="form-group">
+                        <input type="text" id="commenter-name" class="form-input" placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="comment-text" class="form-textarea" placeholder="Share your message..." required></textarea>
+                    </div>
+                    <button class="submit-button" onclick="submitComment()">Submit</button>
+                </div>
+
+                <div class="comments-list" id="comments-container">
+                    <!-- Comments will be dynamically loaded here -->
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Initialize comments array with existing comments
+        let comments = [
+            {
+                name: "Hannah Moore",
+                text: "Can't wait to celebrate!"
+            },
+            {
+                name: "Aunt Gail and Uncle Bruce",
+                text: "We couldn't be more thrilled to be joining you for the weekend! See you soon!"
+            },
+            {
+                name: "Lindsey",
+                text: "Ahhhh, it's happening! Let's party!"
+            },
+            {
+                name: "John & Jamie",
+                text: "From the moment I saw you two together I just knew it. Can't wait to be a part of it - love you guys!"
+            },
+            {
+                name: "C & C",
+                text: "Tickets booked! See you soon!"
+            },
+            {
+                name: "Natalie and David",
+                text: "Congrats you guys! See you in a couple months!"
+            }
+        ];
+
+        // Load comments from localStorage if available
+        function loadComments() {
+            const savedComments = localStorage.getItem('weddingComments');
+            if (savedComments) {
+                comments = JSON.parse(savedComments);
+            }
+            displayComments();
+        }
+
+        // Save comments to localStorage
+        function saveComments() {
+            localStorage.setItem('weddingComments', JSON.stringify(comments));
+        }
+
+        // Display all comments
+        function displayComments() {
+            const container = document.getElementById('comments-container');
+            container.innerHTML = '';
+            
+            comments.forEach((comment, index) => {
+                const commentElement = createCommentElement(comment, index === 0);
+                container.appendChild(commentElement);
+            });
+        }
+
+        // Create a comment element
+        function createCommentElement(comment, isNew = false) {
+            const commentDiv = document.createElement('div');
+            commentDiv.className = isNew ? 'comment new-comment' : 'comment';
+            
+            commentDiv.innerHTML = `
+                <div class="comment-author">${comment.name}</div>
+                <div class="comment-text">${comment.text}</div>
+            `;
+            
+            return commentDiv;
+        }
+
+        // Submit a new comment
+        function submitComment() {
+            const nameInput = document.getElementById('commenter-name');
+            const textInput = document.getElementById('comment-text');
+            
+            const name = nameInput.value.trim();
+            const text = textInput.value.trim();
+            
+            if (name && text) {
+                // Add new comment to the beginning of the array
+                comments.unshift({
+                    name: name,
+                    text: text
+                });
+                
+                // Save and refresh display
+                saveComments();
+                displayComments();
+                
+                // Clear form
+                nameInput.value = '';
+                textInput.value = '';
+                
+                // Show success message
+                showSuccessMessage();
+            }
+        }
+
+        // Show success message
+        function showSuccessMessage() {
+            const successMsg = document.createElement('div');
+            successMsg.style.cssText = `
+                position: fixed;
+                top: 30px;
+                right: 30px;
+                background: #8b7355;
+                color: white;
+                padding: 20px 30px;
+                font-family: 'Lato', sans-serif;
+                font-size: 14px;
+                font-weight: 300;
+                z-index: 1000;
+                box-shadow: 0 10px 30px rgba(139, 115, 85, 0.3);
+                transform: translateX(100%);
+                transition: transform 0.4s ease;
+            `;
+            successMsg.textContent = 'Thank you for your beautiful message!';
+            
+            document.body.appendChild(successMsg);
+            
+            // Animate in
+            setTimeout(() => {
+                successMsg.style.transform = 'translateX(0)';
+            }, 100);
+            
+            // Animate out
+            setTimeout(() => {
+                successMsg.style.transform = 'translateX(100%)';
+                setTimeout(() => {
+                    if (successMsg.parentNode) {
+                        successMsg.parentNode.removeChild(successMsg);
+                    }
+                }, 400);
+            }, 3000);
+        }
+
+        // Load comments when page loads
+        window.addEventListener('DOMContentLoaded', loadComments);
+    </script>
+</body>
+</html>
