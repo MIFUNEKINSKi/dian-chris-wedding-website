@@ -48,6 +48,23 @@ class WeddingEmailSender:
         # Load HTML template
         self.load_email_template()
         
+        # Load and encode venue image
+        self.load_venue_image()
+        
+    def load_venue_image(self):
+        """Load and encode the venue image as base64"""
+        try:
+            import base64
+            # Use the new JPEG image you added
+            image_path = "images/sanur-bali-hyatt.jpg"
+            with open(image_path, "rb") as image_file:
+                encoded_string = base64.b64encode(image_file.read()).decode()
+                self.venue_image_base64 = f"data:image/jpeg;base64,{encoded_string}"
+            logging.info("Venue image (sanur-bali-hyatt.jpg) loaded and encoded successfully")
+        except FileNotFoundError:
+            logging.warning("sanur-bali-hyatt.jpg not found, emails will be sent without image")
+            self.venue_image_base64 = ""
+        
     def load_email_template(self):
         """Load the HTML email template"""
         try:
@@ -74,6 +91,9 @@ class WeddingEmailSender:
         # Replace placeholders
         email_content = email_content.replace("{guest_name}", greeting)
         email_content = email_content.replace("{website_url}", self.website_url)
+        
+        # Remove image placeholder logic, as we now use public GitHub URL directly in template
+        email_content = email_content.replace("{venue_image_src}", "")
         
         # Add plus-one message if applicable
         if guest_data.get('Plus One', '').lower() == 'yes':

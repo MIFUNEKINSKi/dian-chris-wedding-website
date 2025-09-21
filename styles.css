@@ -13,9 +13,114 @@
 body {
     font-family: 'Open Sans', sans-serif;
     line-height: 1.6;
-    color: #333;
-    background: linear-gradient(135deg, #f8f7f6 0%, #f2f1ef 50%, #f5f4f2 100%);
+    color: #3a2c2a;
+    background: linear-gradient(135deg, #f7ecec 0%, #f5e9e6 50%, #f8f6f4 100%);
     padding-top: 60px; /* Account for fixed banner */
+}
+
+/* Headings */
+h1, .banner-names {
+    font-family: 'Cormorant Garamond', 'Cinzel', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #8b5a6b;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+h2, .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #a67c8b;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+h3, .section-subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #8b5a6b;
+    margin-bottom: 8px;
+}
+
+/* Body text */
+p, li, .body-text {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 1.08rem;
+    color: #3a2c2a;
+    margin-bottom: 16px;
+}
+
+/* Section blocks */
+.info-section, .story-section, .gallery-section, .rsvp-section, .faq-section {
+    background: #f8f6f4;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(218, 200, 164, 0.08), 0 1.5px 0 #e7d7d0;
+    margin: 32px auto;
+    padding: 48px 24px;
+    max-width: 900px;
+    position: relative;
+    overflow: hidden;
+}
+
+.info-section::before, .story-section::before, .gallery-section::before, .rsvp-section::before, .faq-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(120deg, rgba(245,233,230,0.12) 0%, rgba(218,200,164,0.08) 100%);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.info-section > *, .story-section > *, .gallery-section > *, .rsvp-section > *, .faq-section > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Divider lines */
+.section-divider {
+    border: none;
+    border-top: 1.5px solid #e7d7d0;
+    margin: 32px 0;
+}
+
+/* Section backgrounds and color blocks */
+.info-section, .story-section, .gallery-section, .rsvp-section, .faq-section {
+    background: #f8f6f4;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(218, 200, 164, 0.08), 0 1.5px 0 #e7d7d0;
+    margin: 32px auto;
+    padding: 48px 24px;
+    max-width: 900px;
+}
+
+.names-banner {
+    background: linear-gradient(90deg, #f7ecec 0%, #e7d7d0 100%);
+    color: #8b5a6b;
+    border-bottom: 1px solid #e7d7d0;
+}
+
+.banner-names {
+    font-family: 'Cormorant Garamond', 'Cinzel', serif;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: #8b5a6b;
+    letter-spacing: 2px;
+}
+
+/* Accent colors */
+.accent {
+    color: #d59ea8;
+}
+
+/* Divider lines */
+.section-divider {
+    border: none;
+    border-top: 1.5px solid #e7d7d0;
+    margin: 32px 0;
+}
 }
 
 /* ULTRA-PREMIUM PRELOADER */
@@ -23,14 +128,25 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 10000;
     transition: opacity 1s ease-out, visibility 1s ease-out;
+}
+
+body:not(.site-loaded) .main-content, body:not(.site-loaded) .hero-section {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+body.site-loaded .main-content, body.site-loaded .hero-section {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transition: opacity 0.8s cubic-bezier(.77,.2,.05,1.0);
+}
 }
 
 .luxury-preloader.hidden {

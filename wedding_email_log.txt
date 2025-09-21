@@ -38,3 +38,27 @@
 2025-09-21 16:39:41,502 - INFO - ✅ Email sent to chrismooreindia55@gmail.com
 2025-09-21 16:41:20,441 - INFO - Email template loaded successfully
 2025-09-21 16:41:21,293 - INFO - ✅ Email sent to chrismooreindia55@gmail.com
+2025-09-21 16:43:39,612 - INFO - Email template loaded successfully
+2025-09-21 16:43:40,896 - INFO - ✅ Email sent to chrismooreindia55@gmail.com
+2025-09-21 16:46:32,462 - INFO - Email template loaded successfully
+2025-09-21 16:46:33,842 - INFO - ✅ Email sent to chrismooreindia55@gmail.com
+2025-09-21 16:51:39,681 - INFO - Email template loaded successfully
+2025-09-21 16:51:39,682 - INFO - Venue image loaded and encoded successfully
+2025-09-21 16:51:40,755 - INFO - ✅ Email sent to chrismooreindia55@gmail.com
+2025-09-21 16:53:16,974 - INFO - Email template loaded successfully
+2025-09-21 16:53:16,974 - INFO - Venue image loaded and encoded successfully
+2025-09-21 16:53:18,039 - INFO - ✅ Email sent to chrismooreindia55@gmail.com
+2025-09-21 16:55:14,539 - INFO - Email template loaded successfully
+2025-09-21 16:55:14,539 - INFO - Venue image loaded and encoded successfully (JPEG format)
+2025-09-21 16:55:15,737 - INFO - ✅ Email sent to chrismooreindia55@gmail.com
+2025-09-21 16:56:52,478 - INFO - Email template loaded successfully
+2025-09-21 16:56:52,479 - INFO - Venue image (sanur-bali-hyatt.jpg) loaded and encoded successfully
+2025-09-21 16:57:03,265 - INFO - Email template loaded successfully
+2025-09-21 16:57:03,266 - INFO - Venue image (sanur-bali-hyatt.jpg) loaded and encoded successfully
+2025-09-21 16:57:04,843 - INFO - ✅ Email sent to chrismooreindia55@gmail.com
+2025-09-21 17:03:21,760 - INFO - Email template loaded successfully
+2025-09-21 17:03:21,761 - INFO - Venue image (sanur-bali-hyatt.jpg) loaded and encoded successfully
+2025-09-21 17:03:23,160 - INFO - ✅ Email sent to chrismooreindia55@gmail.com
+2025-09-21 19:04:59,182 - INFO - Email template loaded successfully
+2025-09-21 19:04:59,183 - INFO - Venue image (sanur-bali-hyatt.jpg) loaded and encoded successfully
+2025-09-21 19:05:00,604 - INFO - ✅ Email sent to chrismooreindia55@gmail.com
