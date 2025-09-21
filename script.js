@@ -976,18 +976,28 @@ function createGeometricPatterns() {
 // ULTRA-PREMIUM PRELOADER
 function initLuxuryPreloader() {
     const preloader = document.getElementById('luxuryPreloader');
-    // Prevent scrolling during preloader
-    document.body.style.overflow = 'hidden';
-    document.body.classList.remove('site-loaded');
-
-    // Hide preloader after 5 seconds
+    
+    // Add preloader-active class to body to hide main content
+    document.body.classList.add('preloader-active');
+    
+    // Hide preloader after 4.5 seconds (longer to appreciate the luxury and read date)
     setTimeout(() => {
         preloader.classList.add('hidden');
-        document.body.classList.add('site-loaded');
-        document.body.style.overflow = '';
+        
+        // Remove preloader-active class to show main content
+        document.body.classList.remove('preloader-active');
+        
         // Remove from DOM after transition
         setTimeout(() => {
             preloader.remove();
         }, 1000);
-    }, 5000);
+    }, 4500);
+    
+    // Prevent scrolling during preloader
+    document.body.style.overflow = 'hidden';
+    
+    // Restore scrolling when preloader is hidden
+    setTimeout(() => {
+        document.body.style.overflow = '';
+    }, 4500);
 }
