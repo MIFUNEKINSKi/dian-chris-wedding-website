@@ -30,3 +30,11 @@
 2025-09-21 16:33:36,215 - INFO - 📧 Total processed: 6
 2025-09-21 16:35:14,122 - INFO - Email template loaded successfully
 2025-09-21 16:35:15,422 - INFO - ✅ Email sent to chrismooreindia55@gmail.com
+2025-09-21 16:36:33,866 - INFO - Email template loaded successfully
+2025-09-21 16:36:34,793 - INFO - ✅ Email sent to chrismooreindia55@gmail.com
+2025-09-21 16:37:20,213 - INFO - Email template loaded successfully
+2025-09-21 16:37:21,242 - INFO - ✅ Email sent to chrismooreindia55@gmail.com
+2025-09-21 16:39:40,064 - INFO - Email template loaded successfully
+2025-09-21 16:39:41,502 - INFO - ✅ Email sent to chrismooreindia55@gmail.com
+2025-09-21 16:41:20,441 - INFO - Email template loaded successfully
+2025-09-21 16:41:21,293 - INFO - ✅ Email sent to chrismooreindia55@gmail.com

@@ -43,7 +43,7 @@ class WeddingEmailSender:
         self.sender_name = "Dian & Christopher"
         
         # Website Configuration
-        self.website_url = "."  # Local file path for testing
+        self.website_url = "https://dian-chris-wedding-website-6r1ls7s6d-mifunekinskis-projects.vercel.app"  # Your Vercel site
         
         # Load HTML template
         self.load_email_template()
