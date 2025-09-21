@@ -83,6 +83,15 @@
             text-shadow: 0 1px 3px rgba(0,0,0,0.2);
         }
         
+        .personal-greeting {
+            font-family: 'Cormorant Garamond', 'Times New Roman', Georgia, serif;
+            font-size: 18px;
+            font-weight: 400;
+            color: #ffffff;
+            margin: 0 0 20px 0;
+            letter-spacing: 1px;
+        }
+        
         .view-invitation-btn {
             display: inline-block;
             background: linear-gradient(135deg, rgba(255,255,255,0.25), rgba(255,255,255,0.15));
@@ -147,6 +156,14 @@
             font-size: 12px;
             color: #666666;
         }
+        
+        .plus-one-note {
+            font-family: 'Cormorant Garamond', Arial, sans-serif;
+            font-size: 16px;
+            color: #d59ea8;
+            margin: 20px 0;
+            font-style: italic;
+        }
     </style>
 </head>
 <body style="margin: 0; padding: 20px; background-color: #f5e6e8; font-family: Arial, sans-serif;">
@@ -158,9 +175,11 @@
                     <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
                         <tr>
                             <td class="header">
+                                <!-- Personalized Greeting - will be replaced by Python script -->
+                                <p class="personal-greeting">Dear {guest_name},</p>
                                 <h1 class="title">You're Invited</h1>
                                 <p class="subtitle">to Dian & Christopher's Wedding</p>
-                                <a href="index.html" class="view-invitation-btn">View Our Wedding</a>
+                                <a href="{website_url}/index.html" class="view-invitation-btn">View Our Wedding</a>
                             </td>
                         </tr>
                     </table>
@@ -173,17 +192,15 @@
                                     We're getting married and we want you to celebrate with us!
                                 </p>
                                 
-                                <!-- Wedding venue preview image -->
-                                <img src="images/ChatGPT Image Sep 8, 2025, 05_14_18 PM.png" 
-                                     alt="Wedding venue preview" 
-                                     class="preview-image">
-                                
                                 <div class="wedding-details">
                                     <strong>Saturday, June 14, 2025</strong><br>
                                     6 in the evening<br>
                                     Eden Rift Vineyards<br>
                                     Hollister, California
                                 </div>
+                                
+                                <!-- Plus-one placeholder - will be replaced by Python script -->
+                                {plus_one_message}
                                 
                                 <p class="signature">with love,<br>Dian & Christopher</p>
                                 

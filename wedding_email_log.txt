@@ -1,0 +1,32 @@
+2025-09-21 16:22:32,247 - INFO - Email template loaded successfully
+2025-09-21 16:22:42,975 - INFO - Sending test email to moorecash@gmail.com
+2025-09-21 16:22:46,715 - ERROR - ❌ Failed to send to moorecash@gmail.com: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials d75a77b69052e-4bdaa3ade11sm58772511cf.47 - gsmtp')
+2025-09-21 16:24:43,387 - INFO - Email template loaded successfully
+2025-09-21 16:24:49,507 - INFO - Sending test email to moorecash@gmail.com
+2025-09-21 16:24:50,321 - ERROR - ❌ Failed to send to moorecash@gmail.com: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials af79cd13be357-83630481f2csm681605985a.35 - gsmtp')
+2025-09-21 16:25:25,921 - ERROR - CSV file not found: 1
+2025-09-21 16:28:56,027 - INFO - Email template loaded successfully
+2025-09-21 16:29:02,219 - INFO - Sending test email to moorecash@gmail.com
+2025-09-21 16:29:03,829 - INFO - ✅ Email sent to moorecash@gmail.com
+2025-09-21 16:33:03,328 - INFO - Email template loaded successfully
+2025-09-21 16:33:18,656 - INFO - Email template loaded successfully
+2025-09-21 16:33:18,662 - INFO - Loaded 6 guests from test-guest-list.csv
+2025-09-21 16:33:18,663 - INFO - Sending to chrismooreindia55@gmail.com (1/6)
+2025-09-21 16:33:20,453 - INFO - ✅ Email sent to chrismooreindia55@gmail.com
+2025-09-21 16:33:22,464 - INFO - Sending to dan.jodiehighroller@gmail.com (2/6)
+2025-09-21 16:33:23,291 - INFO - ✅ Email sent to dan.jodiehighroller@gmail.com
+2025-09-21 16:33:25,301 - INFO - Sending to sadfsdfasdfsfdsdafadsf@gmail.com (3/6)
+2025-09-21 16:33:26,202 - INFO - ✅ Email sent to sadfsdfasdfsfdsdafadsf@gmail.com
+2025-09-21 16:33:28,207 - INFO - Sending to chrismoorespam@gmail.com (4/6)
+2025-09-21 16:33:29,963 - INFO - ✅ Email sent to chrismoorespam@gmail.com
+2025-09-21 16:33:31,972 - INFO - Sending to moorexchristopher@gmail.com (5/6)
+2025-09-21 16:33:32,811 - INFO - ✅ Email sent to moorexchristopher@gmail.com
+2025-09-21 16:33:34,819 - INFO - Sending to ddianw@live.com (6/6)
+2025-09-21 16:33:36,211 - INFO - ✅ Email sent to ddianw@live.com
+2025-09-21 16:33:36,215 - INFO - 
+📊 SUMMARY:
+2025-09-21 16:33:36,215 - INFO - ✅ Successful: 6
+2025-09-21 16:33:36,215 - INFO - ❌ Failed: 0
+2025-09-21 16:33:36,215 - INFO - 📧 Total processed: 6
+2025-09-21 16:35:14,122 - INFO - Email template loaded successfully
+2025-09-21 16:35:15,422 - INFO - ✅ Email sent to chrismooreindia55@gmail.com

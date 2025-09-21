@@ -661,3 +661,337 @@ function initGalleryLightbox() {
 
 // Initialize gallery lightbox when DOM is ready
 document.addEventListener('DOMContentLoaded', initGalleryLightbox);
+
+// ULTRA-PREMIUM PARALLAX EFFECTS
+function initLuxuryParallax() {
+    const heroBg = document.querySelector('.hero-bg');
+    const heroContent = document.querySelector('.hero-content');
+    
+    if (!heroBg || !heroContent) return;
+    
+    // Smooth parallax scrolling
+    function updateParallax() {
+        const scrolled = window.pageYOffset;
+        const parallaxSpeed = 0.5;
+        const rotateSpeed = 0.02;
+        
+        // Multi-layer parallax effect
+        heroBg.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
+        heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
+        
+        // Add floating particles effect
+        const orb = heroBg.querySelector('::after');
+        if (orb) {
+            orb.style.transform = `translate(-50%, -50%) translateY(${Math.sin(scrolled * 0.01) * 20}px)`;
+        }
+    }
+    
+    // Use requestAnimationFrame for smooth performance
+    let ticking = false;
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(updateParallax);
+            ticking = true;
+        }
+    }
+    
+    window.addEventListener('scroll', () => {
+        requestTick();
+        ticking = false;
+    });
+}
+
+// CINEMATIC HERO ENTRANCE ANIMATION
+function initCinematicEntrance() {
+    const heroContent = document.querySelector('.hero-content');
+    const coupleNames = document.querySelector('.couple-names');
+    
+    if (!heroContent || !coupleNames) return;
+    
+    // Split text into individual letters for staggered animation
+    const nameSpans = coupleNames.querySelectorAll('.name-line');
+    
+    nameSpans.forEach((span, index) => {
+        const text = span.textContent;
+        span.innerHTML = '';
+        
+        [...text].forEach((letter, letterIndex) => {
+            const letterSpan = document.createElement('span');
+            letterSpan.textContent = letter === ' ' ? '\u00A0' : letter;
+            letterSpan.style.cssText = `
+                display: inline-block;
+                opacity: 0;
+                transform: translateY(100px) rotateX(90deg);
+                animation: letterReveal 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+                animation-delay: ${(index * 0.3) + (letterIndex * 0.05)}s;
+            `;
+            span.appendChild(letterSpan);
+        });
+    });
+    
+    // Add the keyframe animation
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes letterReveal {
+            0% {
+                opacity: 0;
+                transform: translateY(100px) rotateX(90deg);
+            }
+            50% {
+                opacity: 0.7;
+                transform: translateY(-10px) rotateX(45deg);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) rotateX(0deg);
+            }
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+// LUXURY MICRO-INTERACTIONS
+function initLuxuryMicroInteractions() {
+    // Magnetic button effects
+    const buttons = document.querySelectorAll('button, .registry-item, .nav-link');
+    
+    buttons.forEach(button => {
+        button.addEventListener('mouseenter', function(e) {
+            this.style.cssText += `
+                transform: translateY(-8px) scale(1.05);
+                box-shadow: 0 20px 40px rgba(139, 90, 107, 0.3);
+                transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            `;
+        });
+        
+        button.addEventListener('mouseleave', function(e) {
+            this.style.cssText += `
+                transform: translateY(0) scale(1);
+                box-shadow: 0 4px 15px rgba(139, 90, 107, 0.1);
+                transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            `;
+        });
+        
+        // Ripple effect on click
+        button.addEventListener('click', function(e) {
+            const ripple = document.createElement('span');
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+            
+            ripple.style.cssText = `
+                position: absolute;
+                width: ${size}px;
+                height: ${size}px;
+                left: ${x}px;
+                top: ${y}px;
+                background: radial-gradient(circle, rgba(218, 200, 164, 0.6) 0%, transparent 70%);
+                border-radius: 50%;
+                transform: scale(0);
+                animation: ripple 0.6s ease-out;
+                pointer-events: none;
+                z-index: 1000;
+            `;
+            
+            this.style.position = 'relative';
+            this.style.overflow = 'hidden';
+            this.appendChild(ripple);
+            
+            setTimeout(() => ripple.remove(), 600);
+        });
+    });
+    
+    // Add ripple animation
+    const rippleStyle = document.createElement('style');
+    rippleStyle.textContent = `
+        @keyframes ripple {
+            to {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+    `;
+    document.head.appendChild(rippleStyle);
+}
+
+// Initialize all luxury effects
+document.addEventListener('DOMContentLoaded', () => {
+    initLuxuryPreloader();
+    initLuxuryParallax();
+    initCinematicEntrance();
+    initLuxuryMicroInteractions();
+    initDynamicBackgrounds();
+});
+
+// DYNAMIC BACKGROUND EFFECTS
+function initDynamicBackgrounds() {
+    // Create floating particles system
+    createFloatingParticles();
+    
+    // Add mouse-following gradient
+    createMouseGradient();
+    
+    // Add subtle geometric patterns
+    createGeometricPatterns();
+}
+
+function createFloatingParticles() {
+    const particleContainer = document.createElement('div');
+    particleContainer.className = 'floating-particles';
+    particleContainer.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+        overflow: hidden;
+    `;
+    document.body.appendChild(particleContainer);
+    
+    // Create 15 floating particles
+    for (let i = 0; i < 15; i++) {
+        const particle = document.createElement('div');
+        particle.style.cssText = `
+            position: absolute;
+            width: ${Math.random() * 4 + 2}px;
+            height: ${Math.random() * 4 + 2}px;
+            background: radial-gradient(circle, rgba(213, 158, 168, 0.3) 0%, transparent 70%);
+            border-radius: 50%;
+            left: ${Math.random() * 100}%;
+            top: ${Math.random() * 100}%;
+            animation: floatParticle ${Math.random() * 20 + 10}s linear infinite;
+            animation-delay: ${Math.random() * 5}s;
+        `;
+        particleContainer.appendChild(particle);
+    }
+    
+    // Add particle animation
+    const particleStyle = document.createElement('style');
+    particleStyle.textContent = `
+        @keyframes floatParticle {
+            0% {
+                transform: translateY(100vh) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-100px) translateX(${Math.random() * 200 - 100}px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    `;
+    document.head.appendChild(particleStyle);
+}
+
+function createMouseGradient() {
+    const gradient = document.createElement('div');
+    gradient.className = 'mouse-gradient';
+    gradient.style.cssText = `
+        position: fixed;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(218, 200, 164, 0.1) 0%, transparent 70%);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 1;
+        transform: translate(-50%, -50%);
+        transition: opacity 0.3s ease;
+        opacity: 0;
+    `;
+    document.body.appendChild(gradient);
+    
+    let mouseX = 0, mouseY = 0;
+    let gradientX = 0, gradientY = 0;
+    
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        gradient.style.opacity = '1';
+    });
+    
+    document.addEventListener('mouseleave', () => {
+        gradient.style.opacity = '0';
+    });
+    
+    // Smooth gradient following
+    function updateGradient() {
+        gradientX += (mouseX - gradientX) * 0.1;
+        gradientY += (mouseY - gradientY) * 0.1;
+        
+        gradient.style.left = gradientX + 'px';
+        gradient.style.top = gradientY + 'px';
+        
+        requestAnimationFrame(updateGradient);
+    }
+    updateGradient();
+}
+
+function createGeometricPatterns() {
+    const sections = document.querySelectorAll('section');
+    
+    sections.forEach((section, index) => {
+        if (index % 2 === 0) return; // Only add to odd sections
+        
+        const pattern = document.createElement('div');
+        pattern.style.cssText = `
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(45deg, transparent 49%, rgba(213, 158, 168, 0.03) 50%, transparent 51%),
+                linear-gradient(-45deg, transparent 49%, rgba(213, 158, 168, 0.03) 50%, transparent 51%);
+            background-size: 60px 60px;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0;
+            animation: patternFade ${Math.random() * 10 + 15}s ease-in-out infinite alternate;
+        `;
+        
+        section.style.position = 'relative';
+        section.appendChild(pattern);
+    });
+    
+    // Add pattern animation
+    const patternStyle = document.createElement('style');
+    patternStyle.textContent = `
+        @keyframes patternFade {
+            0% { opacity: 0; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(1.05); }
+            100% { opacity: 0; transform: scale(1); }
+        }
+    `;
+    document.head.appendChild(patternStyle);
+}
+
+// ULTRA-PREMIUM PRELOADER
+function initLuxuryPreloader() {
+    const preloader = document.getElementById('luxuryPreloader');
+    
+    // Hide preloader after 5 seconds (enough time to appreciate the luxury)
+    setTimeout(() => {
+        preloader.classList.add('hidden');
+        
+        // Remove from DOM after transition
+        setTimeout(() => {
+            preloader.remove();
+        }, 1000);
+    }, 5000);
+    
+    // Prevent scrolling during preloader
+    document.body.style.overflow = 'hidden';
+    
+    // Restore scrolling when preloader is hidden
+    setTimeout(() => {
+        document.body.style.overflow = '';
+    }, 5000);
+}
