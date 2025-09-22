@@ -64,3 +64,33 @@
 2025-09-21 19:05:00,604 - INFO - ✅ Email sent to chrismooreindia55@gmail.com
 2025-09-21 19:28:29,638 - INFO - Email template loaded successfully
 2025-09-21 19:28:29,639 - INFO - Venue image (sanur-bali-hyatt.jpg) loaded and encoded successfully
+2025-09-21 19:58:47,175 - INFO - Email template loaded successfully
+2025-09-21 19:58:47,176 - INFO - Venue image (sanur-bali-hyatt.jpg) loaded and encoded successfully
+2025-09-21 19:59:10,676 - INFO - Loaded 5 guests from guest-list-template.csv
+2025-09-21 19:59:10,677 - INFO - Sending to moorecash@gmail.com (1/5)
+2025-09-21 19:59:12,768 - INFO - ✅ Email sent to moorecash@gmail.com
+2025-09-21 19:59:17,775 - INFO - Sending to ddianw@live.com (2/5)
+2025-09-21 19:59:19,265 - INFO - ✅ Email sent to ddianw@live.com
+2025-09-21 19:59:24,267 - INFO - Sending to couple@email.com (3/5)
+2025-09-21 19:59:25,134 - INFO - ✅ Email sent to couple@email.com
+2025-09-21 19:59:30,144 - INFO - Sending to family@email.com (4/5)
+2025-09-21 19:59:31,955 - INFO - ✅ Email sent to family@email.com
+2025-09-21 19:59:36,961 - INFO - Sending to single@email.com (5/5)
+2025-09-21 19:59:38,744 - INFO - ✅ Email sent to single@email.com
+2025-09-21 19:59:38,748 - INFO - 
+📊 SUMMARY:
+2025-09-21 19:59:38,748 - INFO - ✅ Successful: 5
+2025-09-21 19:59:38,748 - INFO - ❌ Failed: 0
+2025-09-21 19:59:38,748 - INFO - 📧 Total processed: 5
+2025-09-21 19:59:45,212 - INFO - Email template loaded successfully
+2025-09-21 19:59:45,213 - INFO - Venue image (sanur-bali-hyatt.jpg) loaded and encoded successfully
+2025-09-21 19:59:45,213 - INFO - Sending test email to dian.christopher.wedding@gmail.com
+2025-09-21 19:59:46,273 - INFO - ✅ Email sent to dian.christopher.wedding@gmail.com
+2025-09-21 19:59:46,274 - INFO - Sending test email to chrismoore@mifunekinski.com
+2025-09-21 19:59:47,160 - INFO - ✅ Email sent to chrismoore@mifunekinski.com
+2025-09-21 19:59:55,156 - INFO - Email template loaded successfully
+2025-09-21 19:59:55,157 - INFO - Venue image (sanur-bali-hyatt.jpg) loaded and encoded successfully
+2025-09-21 19:59:55,157 - INFO - Sending test email to dian.christopher.wedding@gmail.com
+2025-09-21 19:59:56,473 - INFO - ✅ Email sent to dian.christopher.wedding@gmail.com
+2025-09-21 19:59:56,475 - INFO - Sending test email to chrismoore@mifunekinski.com
+2025-09-21 19:59:57,804 - INFO - ✅ Email sent to chrismoore@mifunekinski.com

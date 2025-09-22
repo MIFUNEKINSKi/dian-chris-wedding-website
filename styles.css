@@ -398,6 +398,49 @@ h2 {
     display: inline-block;
 }
 
+/* Script Image Headings */
+.script-heading {
+    display: block;
+    margin: 0 auto 50px auto;
+    text-align: center;
+    position: relative;
+    background: transparent;
+}
+
+.script-heading img {
+    max-width: 100%;
+    height: auto;
+    max-height: 300px; /* Increased 2.5x from 120px */
+    min-height: 150px;
+    transition: all 0.3s ease;
+    display: block;
+    margin: 0 auto;
+    opacity: 0.9;
+    /* Handle any remaining background issues */
+    mix-blend-mode: multiply;
+    filter: contrast(1.1);
+}
+
+.script-heading img:hover {
+    opacity: 1;
+    transform: scale(1.02);
+}
+
+/* Responsive script images - larger sizes */
+@media (max-width: 768px) {
+    .script-heading img {
+        max-height: 250px; /* Increased 2.5x from 100px */
+        min-height: 125px;
+    }
+}
+
+@media (max-width: 480px) {
+    .script-heading img {
+        max-height: 200px; /* Increased 2.5x from 80px */
+        min-height: 100px;
+    }
+}
+
 h2::before {
     content: '';
     position: absolute;
