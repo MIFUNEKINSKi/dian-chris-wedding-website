@@ -1343,8 +1343,13 @@ h4 {
     }
     
     .rehearsal-image {
-        min-height: 300px;
+        min-height: 250px;
         background-attachment: scroll;
+        order: -1;
+    }
+    
+    .rehearsal-text {
+        padding: 60px 30px;
     }
     
     .gallery-grid {
