@@ -247,6 +247,16 @@ main {
     opacity: 1;
     visibility: visible;
     transition: all 0.3s ease;
+    padding-right: 60px;
+}
+
+@media (max-width: 768px) {
+    .banner-names {
+        font-size: 11px;
+        letter-spacing: 1px;
+        padding-right: 50px;
+        line-height: 1.4;
+    }
 }
 
 .menu-toggle {
@@ -828,6 +838,20 @@ h4 {
     z-index: 2;
 }
 
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+}
+
 .gallery-item {
     aspect-ratio: 1;
     overflow: hidden;
@@ -852,27 +876,6 @@ h4 {
     z-index: 3;
 }
 
-.gallery-item::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    width: 60px;
-    height: 60px;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    color: #8b5a6b;
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    z-index: 4;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
-}
-
 .gallery-item:hover {
     transform: translateY(-12px) scale(1.02);
     box-shadow: 0 25px 60px rgba(139, 90, 107, 0.25);
@@ -880,10 +883,6 @@ h4 {
 
 .gallery-item:hover::before {
     opacity: 1;
-}
-
-.gallery-item:hover::after {
-    transform: translate(-50%, -50%) scale(1);
 }
 
 .gallery-item:hover img {
