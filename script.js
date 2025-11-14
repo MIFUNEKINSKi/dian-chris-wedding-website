@@ -32,7 +32,8 @@ function scrollToRSVP() {
 
 const EMAILJS_CONFIG = {
     serviceID: 'service_1hg45ft',     // Your EmailJS service ID (confirmed)
-    templateID: 'template_0jc1zvm',  // Your EmailJS template ID - NEEDS SETUP!
+    templateID: 'template_0jc1zvm',  // Your EmailJS template ID (to you - owner)
+    guestTemplateID: 'template_guest_confirm',  // Guest confirmation template
     userID: 'eFHAzQYQmpvprp7lb'       // Your EmailJS user ID (public key - confirmed)
 };
 
@@ -101,13 +102,33 @@ function handleRSVP(event) {
         submissionDate: new Date().toLocaleDateString()
     };
     
-    // Send email using EmailJS
+    // Send email to owner using EmailJS
     emailjs.send(EMAILJS_CONFIG.serviceID, EMAILJS_CONFIG.templateID, rsvpData)
         .then(function(response) {
-            console.log('SUCCESS!', response.status, response.text);
+            console.log('Owner notification sent!', response.status, response.text);
+            
+            // Prepare guest confirmation data
+            const guestData = {
+                email: rsvpData.email,
+                firstName: rsvpData.firstName,
+                fullName: rsvpData.fullName,
+                attendanceText: rsvpData.attendanceText,
+                attendanceMessage: rsvpData.attendance === 'yes' 
+                    ? 'thrilled that you will be joining us' 
+                    : 'sorry you cannot make it, but we understand',
+                guestDetails: rsvpData.attendance === 'yes' 
+                    ? `• Number of Guests: ${rsvpData.guests}\n${rsvpData.dietary ? `• Dietary Restrictions: ${rsvpData.dietary}\n` : ''}${rsvpData.message ? `• Your Message: ${rsvpData.message}` : ''}`
+                    : ''
+            };
+            
+            // Send confirmation email to guest
+            return emailjs.send(EMAILJS_CONFIG.serviceID, EMAILJS_CONFIG.guestTemplateID, guestData);
+        })
+        .then(function(response) {
+            console.log('Guest confirmation sent!', response.status, response.text);
             
             const fullName = rsvpData.fullName;
-            alert(`Thank you for your RSVP, ${fullName}! We've received your response and will be in touch soon.`);
+            showRSVPConfirmation(fullName, rsvpData.attendance === 'yes');
             
             // Reset the form
             form.reset();
@@ -134,7 +155,7 @@ function handleRSVP(event) {
                 errorMessage += 'Please try again or contact us directly.';
             }
             
-            alert(errorMessage);
+            showRSVPError(errorMessage);
             
             // Re-enable submit button
             submitBtn.disabled = false;
@@ -143,6 +164,58 @@ function handleRSVP(event) {
     
     // For development/testing - you can remove this console.log later
     console.log('RSVP Data:', rsvpData);
+}
+
+// RSVP Confirmation Modal
+function showRSVPConfirmation(guestName, isAttending) {
+    const modal = document.createElement('div');
+    modal.className = 'rsvp-modal';
+    modal.innerHTML = `
+        <div class="rsvp-modal-content">
+            <div class="rsvp-modal-icon">✓</div>
+            <h2 class="rsvp-modal-title">Thank You, ${guestName}!</h2>
+            <p class="rsvp-modal-message">
+                ${isAttending 
+                    ? "We've received your RSVP and can't wait to celebrate with you on our special day!" 
+                    : "We've received your response. You will be missed, but we understand."}
+            </p>
+            <p class="rsvp-modal-submessage">
+                A confirmation email has been sent to your inbox.
+            </p>
+            <button class="rsvp-modal-btn" onclick="this.closest('.rsvp-modal').remove()">Close</button>
+        </div>
+    `;
+    document.body.appendChild(modal);
+    
+    // Fade in
+    setTimeout(() => modal.classList.add('show'), 10);
+    
+    // Auto close after 8 seconds
+    setTimeout(() => {
+        modal.classList.remove('show');
+        setTimeout(() => modal.remove(), 400);
+    }, 8000);
+}
+
+// RSVP Error Modal
+function showRSVPError(errorMessage) {
+    const modal = document.createElement('div');
+    modal.className = 'rsvp-modal error';
+    modal.innerHTML = `
+        <div class="rsvp-modal-content">
+            <div class="rsvp-modal-icon error">✕</div>
+            <h2 class="rsvp-modal-title">Oops!</h2>
+            <p class="rsvp-modal-message">${errorMessage}</p>
+            <p class="rsvp-modal-submessage">
+                You can also reach us directly at dian.christopher.wedding@gmail.com
+            </p>
+            <button class="rsvp-modal-btn" onclick="this.closest('.rsvp-modal').remove()">Close</button>
+        </div>
+    `;
+    document.body.appendChild(modal);
+    
+    // Fade in
+    setTimeout(() => modal.classList.add('show'), 10);
 }
 
 function validateForm() {
