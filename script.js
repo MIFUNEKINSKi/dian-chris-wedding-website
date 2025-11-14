@@ -347,8 +347,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize scroll animations
     handleScrollAnimations();
     
-    // Initialize photo gallery
-    initPhotoGallery();
+    // Initialize gallery lightbox (handles all gallery functionality)
+    initGalleryLightbox();
     
     // Enhance form validation
     enhanceFormValidation();
@@ -541,19 +541,24 @@ document.addEventListener('DOMContentLoaded', initNavigationMenu);
 
 // Gallery Lightbox Functionality
 function initGalleryLightbox() {
+    // Prevent duplicate initialization
+    if (document.getElementById('lightbox')) {
+        return;
+    }
+    
     const galleryItems = document.querySelectorAll('.gallery-item');
     const galleryImages = Array.from(galleryItems).map(item => item.querySelector('img'));
     
     // Create lightbox HTML
     const lightboxHTML = `
         <div class="lightbox" id="lightbox">
+            <button class="lightbox-close" aria-label="Close">&times;</button>
+            <button class="lightbox-nav lightbox-prev" aria-label="Previous">&#8249;</button>
+            <button class="lightbox-nav lightbox-next" aria-label="Next">&#8250;</button>
             <div class="lightbox-content">
-                <button class="lightbox-close" aria-label="Close">&times;</button>
-                <button class="lightbox-nav lightbox-prev" aria-label="Previous">&#8249;</button>
                 <img class="lightbox-image" src="" alt="">
-                <button class="lightbox-nav lightbox-next" aria-label="Next">&#8250;</button>
-                <div class="lightbox-counter"></div>
             </div>
+            <div class="lightbox-counter"></div>
         </div>
     `;
     
@@ -658,9 +663,6 @@ function initGalleryLightbox() {
         }
     });
 }
-
-// Initialize gallery lightbox when DOM is ready
-document.addEventListener('DOMContentLoaded', initGalleryLightbox);
 
 // ULTRA-PREMIUM PARALLAX EFFECTS
 function initLuxuryParallax() {
