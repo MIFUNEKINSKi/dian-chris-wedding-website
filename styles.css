@@ -1065,52 +1065,33 @@ h4 {
 /* Registry Section */
 .registry-section {
     padding: 100px 20px;
-    background: linear-gradient(135deg, rgba(213, 158, 168, 0.9) 0%, rgba(198, 142, 153, 0.9) 50%, rgba(183, 126, 138, 0.9) 100%), 
-                url('images/ChatGPT Image Sep 8, 2025, 06_15_15 PM.png');
+    background: url('images/red-background.png');
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
     text-align: center;
     position: relative;
     min-height: 400px;
-}
-
-.registry-content {
-    max-width: 1000px;
-    margin: 0 auto;
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 80px;
-}
-
-.registry-content.single-registry {
     justify-content: center;
-}
-
-.registry-content.single-registry .registry-item {
-    max-width: 400px;
-    flex: none;
+    align-items: center;
 }
 
 .registry-item {
     text-align: center;
-    color: #DAC8A4;
-    flex: 1;
-    min-width: 300px;
     text-decoration: none;
-    display: block;
+    display: inline-block;
     transition: all 0.3s ease;
     cursor: pointer;
-    padding: 20px;
-    border-radius: 8px;
 }
 
-.registry-item:hover {
-    transform: translateY(-5px);
-    background-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+.registry-item .script-heading {
+    margin: 0;
+}
+
+.registry-item:hover .script-heading img {
+    opacity: 1;
+    transform: scale(1.05);
 }
 
 .registry-item:hover .registry-script,

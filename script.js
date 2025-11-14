@@ -477,21 +477,46 @@ function trackRegistryClick(registryName) {
     
     // Handle cash registry click
     if (registryName === 'Cash Registry') {
-        // You can customize this message and add your preferred payment methods
-        const cashMessage = `Thank you for wanting to contribute to our special day!\n\n` +
-                           `Cash gifts can be given:\n` +
-                           `• At the wedding reception\n` +
-                           `• Via Venmo: @YourVenmoHandle\n` +
-                           `• Via Zelle: your-email@example.com\n` +
-                           `• Via PayPal: your-email@example.com\n\n` +
-                           `Your love and presence mean the world to us!`;
-        
-        alert(cashMessage);
+        showRegistryModal();
         return false; // Prevent navigation
     }
     
     // For other registries, allow normal navigation
     return true;
+}
+
+// Registry Modal
+function showRegistryModal() {
+    const modal = document.createElement('div');
+    modal.className = 'rsvp-modal';
+    modal.innerHTML = `
+        <div class="rsvp-modal-content">
+            <h2 class="rsvp-modal-title">Thank You!</h2>
+            <p class="rsvp-modal-message">
+                Thank you for wanting to contribute to our special day!
+            </p>
+            <div class="registry-payment-options">
+                <p><strong>Scan to send via Venmo:</strong></p>
+                <img src="images/MyVenmoQRCode.png" alt="Venmo QR Code" style="max-width: 200px; margin: 20px auto; display: block; border-radius: 8px;" />
+                <p style="margin-top: 20px;"><strong>Or give cash gifts at the wedding reception</strong></p>
+            </div>
+            <p class="rsvp-modal-submessage">
+                Your love and presence mean the world to us!
+            </p>
+            <button class="rsvp-modal-btn" onclick="this.closest('.rsvp-modal').remove()">Close</button>
+        </div>
+    `;
+    document.body.appendChild(modal);
+    
+    // Close on background click
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.remove();
+        }
+    });
+    
+    // Fade in
+    setTimeout(() => modal.classList.add('show'), 10);
 }
 
 // Utility function for responsive image loading
